@@ -1,0 +1,66 @@
+@keyframes tooltip-scroll {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 200px;
+    }
+}
+
+.loginIcon, .favoriteIcon, .cartIcon {
+    color: white;
+    width: 47px;
+    height: 27px;
+    cursor: pointer;
+}
+
+.loginIconBtn {
+    position: relative;
+    padding:20px 10px;
+}
+
+
+.tooltipAppears{
+    animation: tooltip-scroll 400ms forwards ease-in-out;
+
+}
+
+.tooltipDissapears{
+    animation: tooltip-scroll 400ms forwards ease-in-out reverse;
+
+}
+
+.tooltipContainer {
+    position: absolute;
+    visibility: visible;
+    opacity: 1;
+    z-index: -1;
+    /*overflow: hidden;*/
+    bottom: 72px;
+    width: 325px;
+    height: 300px;
+    background-color: white;
+    /*display: none;*/
+    right:17px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+
+}
+
+
+/*.tooltipContainer::after {*/
+/*    flex-direction: column;*/
+/*    left: 0;*/
+/*    margin-bottom: 10px;*/
+/*    right: 0;*/
+/*    top: 10px;*/
+/*    display: flex;*/
+/*    background-color: #fff;*/
+/*    opacity:0;*/
+/*}*/
+
+.infoPersonContainer {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}

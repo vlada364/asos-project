@@ -1,0 +1,39 @@
+.addressContainer{
+    display: flex;
+    background-color: #fff;
+    padding:20px 32px;
+    justify-content: space-between;
+}
+.editContainer{
+    display: flex;
+    align-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+}
+.editPencil{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    right: 0;
+}
+.editPencil p{
+    font-size: 13px;
+    color:#767676;
+}
+.editPencil img{
+    width:40px;
+}
+.addressesInfoBlock{
+    margin-right: calc(145px + calc(12 * 4px));
+}
+.warningMessage{
+    font-size: 25px;
+    color: yellow;
+
+}
+.warningMessage p{
+    font-weight: 300;
+    font-size:14px;
+    color:black;
+}

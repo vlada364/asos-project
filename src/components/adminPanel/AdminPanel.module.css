@@ -1,0 +1,41 @@
+.adminPanelTitle{
+    display:flex;
+    justify-content: center;
+}
+.imagesAdded{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:20px;
+    padding-bottom: 20px;
+}
+
+.closeImage{
+    display:flex;
+    flex-direction: row;
+    gap:10px;
+}
+.formContainer{
+    width: 345px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* min-height: 1px; */
+    height: max-content;
+    position: fixed;
+}
+.btnAddClothes{
+    border: 2px solid #2d2d2d;
+    background-color: #2d2d2d;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 26px;
+    color: white;
+    padding: 13px 6px;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Montserrat';
+}

@@ -1,0 +1,40 @@
+.tooltipCategory{
+    /*max-width:1280px;*/
+    /*width:100%;*/
+    /*height:max-content;*/
+    /*background-color: #ffffff;*/
+    /*z-index: 3;*/
+    /*padding:20px 10px;*/
+    /*display: flex;*/
+    /*box-sizing: border-box;*/
+    opacity:1;
+}
+.opacityCategory{
+    opacity:1;
+    transition:opacity .5s ease-in-out;
+    max-width:1280px;
+    width:100%;
+    height:max-content;
+    background-color: #ffffff;
+    z-index: 3;
+    padding:20px 10px;
+    display: flex;
+    box-sizing: border-box;
+    position: absolute;
+    top: 58px;
+}
+/*.tooltipCategory ul{*/
+/*    list-style: none;*/
+/*    margin:0;*/
+/*    padding:0;*/
+/*    color:black;*/
+/*    display:flex;*/
+/*    flex-direction: column;*/
+/*    height:100%;*/
+
+/*}*/
+/*.tooltipCategory li{*/
+/*    color:black;*/
+/*    font-weight: 300;*/
+/*    font-size:14px;*/
+/*}*/

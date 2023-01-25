@@ -1,0 +1,30 @@
+.favClothesContainer{
+    width: 100%;
+    justify-content: center;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+.favClothes{
+    max-width: 767px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:20px;
+    padding-top: 41px;
+    padding-bottom: 41px;
+}
+.heading{
+    width:100%;
+    height:82px;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+}
+body{
+    background-color: white;
+
+}

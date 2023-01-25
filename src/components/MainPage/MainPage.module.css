@@ -1,0 +1,182 @@
+
+.mainPage{
+    background-color: #26E066;
+    width:100%;
+}
+.mainProduction{
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    border-bottom: 1px solid white;
+}
+.offerBlock{
+    display:flex;
+    width:50%;
+    justify-content:center;
+    border-right: 1px solid white;
+
+}
+
+.saleBlock{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    flex-wrap: wrap;
+    background-color: #26E066;
+}
+
+.headlineSale{
+    width:500px;
+}
+.headlineSale h2{
+    font-size: 40px;
+    font-weight: 700;
+    font-family: 'Josefin_Sans', sans-serif;
+}
+.saleBlock p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+}
+
+.imgWrapContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+.imgWrap img{
+    width: 100%;
+    height:100%;
+}
+.btnShopNow{
+    padding: 14px 36px;
+    background-color: white;
+    border: 1px solid white;
+    position: absolute;
+    bottom: 0;
+    font-weight: 600;
+    margin-bottom: 19px;
+    font-family: 'Josefin_Sans', sans-serif;
+    transition: all 500ms ease;
+}
+
+.btnShopNow:hover{
+    background-color: black;
+    border:1px solid black;
+    color:white;
+}
+
+.categoryRow{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:19px;
+    padding-top:30px;
+}
+.imgRowBlock img{
+    width:300px;
+}
+.imgRowBlock{
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    padding: 29px 0;
+}
+.imgRowBlock span{
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size:17px;
+    padding-top:14px;
+}
+.imgRowBlock p{
+    font-weight: 300;
+    font-size: 15px;
+}
+.twoBigImageContainer{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:32px;
+    padding-top:42px;
+}
+.bigImageBlock{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.bigImageBlock span{
+    font-size:24px;
+    font-family: 'SansSerif',sans-serif;
+    padding-top:20px;
+
+}
+.bigImageBlock p{
+    font-weight: 600;
+}
+.bigImageBtn{
+    padding: 12px 56px;
+    border:2px solid black;
+    font-size: 14px;
+    font-family: 'SansSerif',sans-serif;
+    background-color: white;
+
+}
+.bigImageBtn:hover{
+    background-color: black;
+    color:white;
+    transition: 0.8s ease;
+}
+
+
+.bigImageBlock img{
+    width:500px;
+}
+
+.trendingBrandTitle{
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    font-weight:600;
+    font-size:26px;
+    font-family: 'Josefin_Sans', sans-serif;
+    padding-top:28px;
+    letter-spacing: 1px ;
+}
+
+.socialMediaBlock{
+    width:100%;
+    border-top:1px solid #ddd;
+    flex-direction: row;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.socialMediaIcons{
+    display:flex;
+    flex-direction: row;
+}
+
+.socialMediaIcons img{
+    width:30px;
+}
+.icon{
+    margin: 15px 0 15px 50px;
+}
+.icon:hover{
+    border-color: #007aff;
+}
+.creditCardsIcons{
+    display:flex;
+    flex-direction: row;
+}
+.creditCardsIcons img{
+    width:38px;
+}
+.creditCardsIcons{
+
+}

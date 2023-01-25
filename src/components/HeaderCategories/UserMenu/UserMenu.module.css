@@ -1,0 +1,60 @@
+.headerUserMenu{
+    display:flex;
+    flex-direction: row;
+    width:100%;
+    height:57px;
+    background-color: #eee;
+    justify-content: space-between;
+    align-items: center;
+}
+/*.borderBetween {*/
+/*    content: "|";*/
+/*    padding: 0 0.5em;*/
+/*    color:black;*/
+/*}*/
+.linkRegistration{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    padding-left:14px;
+}
+.closeUserMenu{
+    cursor:pointer;
+    padding-right: 14px;
+}
+.iconClose{
+    width:20px;
+    height:20px;
+}
+.closeUserMenu:hover {
+    color:#0770cf !important;
+}
+.userContact{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+}
+.myAccountLink{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+}
+.myAccountLink:hover{
+    color:#0770cf !important;
+}
+
+.iconContainer{
+    display:flex;
+    padding: 10px 10px 10px 0;
+}
+.accountIcon{
+ font-size: 22px;
+}
+.myAccountLink p{
+    font-weight: 300;
+    font-size:14px;
+
+}

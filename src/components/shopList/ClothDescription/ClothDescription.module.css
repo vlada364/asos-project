@@ -1,0 +1,56 @@
+.clothName{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color:black;
+}
+.priceCloth{
+    color:#d01345;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+}
+.clothInformation{
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+}
+.clothColour{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    gap:10px;
+}
+.clothColour span{
+    font-size: 13px;
+}
+.clothColour p{
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .4px;
+}
+.btnAddToBag{
+    padding:11px 48px;
+    background-color:#018849;
+    border: 1px solid #018849;
+    color:white;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .8px;
+    cursor:pointer;
+}
+.btnAddToBag:hover{
+    background-color: #006637;
+}
+.clothSizeSelect{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.actionBtns{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+
+}

@@ -1,0 +1,232 @@
+.containerItem {
+    display: grid;
+    width: 100%;
+}
+
+.titleSale {
+    box-sizing: border-box;
+    padding: 0 11px;
+    flex-direction: column;
+    border-right: 1px solid #ddd;
+    margin: 10px 10px;
+}
+
+.titleSale li {
+    cursor: pointer;
+}
+
+.listLi:hover {
+    color: #007aff;
+}
+
+.titleList {
+    padding-bottom: 18px;
+}
+
+.titleList span {
+    border-bottom: 1px solid black;
+    padding-bottom: 6px;
+}
+
+
+.ulTitleSale {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 14px;
+    max-height: 412px;
+    flex-wrap: wrap;
+}
+
+.containerImage {
+    display: flex;
+    margin-top: 20px;
+
+
+}
+
+.listImage {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    text-align: center;
+    list-style: none;
+    position: relative;
+}
+
+.titleImage span {
+    font-size: 13px;
+    color: black;
+    font-weight: 300;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.titleImage:hover img {
+    outline: 1px solid #007aff;
+    color: #007aff;
+}
+
+.titleImage:hover span {
+    color: #007aff !important;
+}
+
+.titleImage img {
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    width: 80px;
+    height: 80px;
+}
+
+.titleSale img {
+    border: 1px solid #ddd;
+}
+
+.listLi {
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: inline-block;
+    color: black;
+    font-weight: 300;
+    font-size: 13px;
+}
+
+.bigListImage {
+    list-style: none;
+    margin-top: 10px;
+    padding: 0;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.listBigImage {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+.listBigImage :hover img {
+    outline: 1px solid #007aff;
+    color: #007aff;
+}
+
+.listBigImage :hover span {
+    color: black !important;
+}
+
+.bigImageSpan {
+    position: absolute;
+    bottom: 8px;
+}
+
+.bigImageContainer img {
+    width: 90%;
+    height: 90%;
+}
+
+.imageGradient {
+    background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0), hsla(0, 0%, 97.3%, .8));
+    background-repeat: no-repeat;
+    background-size: 100% 70%;
+    background-position: bottom;
+}
+
+.listSixImage {
+    list-style: none;
+    margin-top: 10px;
+    padding: 0;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    height: 312px;
+    flex-wrap: wrap;
+}
+
+.listSixImage img {
+    width: 40px;
+    height: 40px;
+}
+
+.listSixContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.bigImageColumn {
+    list-style: none;
+    margin-top: 10px;
+    padding: 0;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.imageBig img {
+    border: 1px solid #ddd;
+    width: 100%;
+    height: 100%;
+}
+
+.listInline {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.listInline:hover img {
+    outline: 1px solid #007aff;;
+    color: #007aff;
+}
+
+.listInline:hover span {
+    color: #007aff !important;
+}
+
+.imageBig {
+    position: relative;
+}
+
+.line {
+    position: absolute;
+    text-align: center;
+    background-color: #ddd;
+    width: 94px;
+    height: 1px;
+}
+
+.bigImageTitle {
+    position: absolute;
+}
+
+.bigColumnContainer {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.titleImage {
+    position: relative;
+}
+
+.lineSpan {
+    position: relative;
+}
+
+.bigColumnContainer:hover img {
+    outline: 1px solid #007aff;
+    color: #007aff;
+
+}

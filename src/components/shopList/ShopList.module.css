@@ -1,0 +1,96 @@
+.containerSelect {
+    width:100%;
+    display: block;
+    background-color: #eee;
+    height: 174px;
+    justify-content: center;
+
+}
+
+.categorySelectBlock {
+    display: flex;
+    flex-direction: row;
+    padding-left: 32px;
+    padding-right: 32px;
+    gap: 10px;
+}
+
+.shopGalleryBlock {
+    box-sizing: border-box;
+    padding:22px;
+}
+
+.shopGalleryContainer {
+    min-width: 762px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: space-around;
+    padding:0 36px;
+}
+
+.likeClothBtn ,.likeClothBtnHover{
+    background-color: rgba(255, 255, 255);
+    border: none;
+    border-radius: 50%;
+    color: black;
+    height: 36px;
+    outline: none;
+    padding: 10px 8px 8px;
+    right: 20px;
+    width: 36px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    bottom: 13px;
+}
+.clothCategoryName{
+    padding:40px 40px;
+    font-size:20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.likeClothBtn span {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../../../public/img/white-heart.png");
+}
+.likeClothBtnHover span{
+    background-image: url("../../../public/img/black-heart.png");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.likeClothBtn:hover span{
+    background-image: url("../../../public/img/black-heart.png");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+.shopListItem{
+    position: relative;
+    width: 316px;
+    height: 404px;
+    overflow: hidden;
+    background-size: cover;
+    transition: background-image 0.5ms ease;
+}
+.flexItemContainer{
+    max-width: 316px;
+    flex-grow: 1;
+    cursor: pointer;
+}
+.clothDescription{
+    font-size: 12px;
+    font-weight: 300;
+    height:30px;
+}
+.clothPrice{
+    color:#d01345;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}

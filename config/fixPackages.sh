@@ -1,0 +1,1 @@
+cp config/types.ts node_modules/react-multiple-image-uploader/src/types.ts
