@@ -58,7 +58,7 @@ const SaleItem = (props) => {
                 {list.map(el => {
                     return (<li id={el.id} key={el.id} className={styles.titleImage}>
                         <div className={styles.listInline}>
-                            <div><img
+                            <div className={"highlight-image"}><img
                                 src={el.image}/></div>
                             <div className={styles.lineSpan}><span>{el.name}</span>
                                 <div className={styles.line}></div>

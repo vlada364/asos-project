@@ -5,8 +5,9 @@ import {useState} from "react";
 import MenuLink from "./MenuLink";
 import {useLocation} from "react-router";
 import CategoryHeader from "./CategoryHeader/CategoryHeader";
-import {categoryItemsMap, menuItems,title} from "../data/MenuItems";
+import {categoryItemsMap, menuItems, title} from "../data/MenuItems";
 import ClothesCategory from "./ClothesCategory/ClothesCategory";
+import styles from "./LoginPage/LoginPage.module.css";
 
 
 const Header = () => {
@@ -15,14 +16,16 @@ const Header = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
     const [idCategories, setIdCategories] = useState(0)
 
-    const [idClothesCategory,setClothesCategory]=useState(0)
+    const [idClothesCategory, setClothesCategory] = useState(0)
 
     function changeId(id) {
         setIdCategories(id)
     }
-  function changeIdClothes(id){
+
+    function changeIdClothes(id) {
         setClothesCategory(id)
-  }
+    }
+
     function openMenu(id) {
         console.log(id)
         setMenuOpen(true)
@@ -47,8 +50,10 @@ const Header = () => {
                 <LoginPage/>
             </div>
         </div>
-        <CategoryHeader clothCategory={menuItems} idClothes={idClothesCategory}changeId={changeId} idCategories={idCategories} openMenu={openMenu} closeMenu={closeMenu} isMenuOpen={isMenuOpen}/>
-        {(isMenuOpen) && (<ClothesCategory  isMenuOpen={isMenuOpen}closeMenu={closeMenu} categoryItems={categoryItemsMap[idCategories]} id={idClothesCategory} />)}
+        <CategoryHeader clothCategory={menuItems} idClothes={idClothesCategory} changeId={changeId}
+                        idCategories={idCategories} openMenu={openMenu} closeMenu={closeMenu} isMenuOpen={isMenuOpen}/>
+        {(isMenuOpen) && (<ClothesCategory isMenuOpen={isMenuOpen} closeMenu={closeMenu}
+                                           categoryItems={categoryItemsMap[idCategories]} id={idClothesCategory}/>)}
         <div className={'window-wrapper' + (isMenuOpen ? '' : '-block')}></div>
     </div>);
 }
