@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ClothesCategory.module.css'
 import SaleItem from "../SaleItem/SaleItem";
-import NewInItems from "../NewInItems/NewInItems";
+import NewInItems from "../../NewInItems/NewInItems";
 
 
 const ClothesCategory = (props) => {

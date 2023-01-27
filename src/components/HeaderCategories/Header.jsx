@@ -5,7 +5,7 @@ import {useState} from "react";
 import MenuLink from "./MenuLink";
 import {useLocation} from "react-router";
 import CategoryHeader from "./CategoryHeader/CategoryHeader";
-import {categoryItemsMap, menuItems, title} from "../data/MenuItems";
+import {categoryItemsMap, menuItems, title} from "../../data/MenuItems";
 import ClothesCategory from "./ClothesCategory/ClothesCategory";
 import styles from "./LoginPage/LoginPage.module.css";
 

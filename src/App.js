@@ -1,20 +1,20 @@
 import './App.css';
-import Header from "./components/Header";
-import {render} from 'react-dom';
-import {Router, Route, Navigate, Routes} from 'react-router'
+import Header from "./components/HeaderCategories/Header";
+import {Router, Route, Navigate, Routes, useLocation} from 'react-router'
 import React from "react";
-import MenuLink from './components/MenuLink'
-import CategoryHeader from "./components/CategoryHeader/CategoryHeader";
-import {menuItems} from './data/MenuItems'
+import RegistrationForm from "./components/Registration/RegistrationForm";
 
 function App() {
+    const location = useLocation();
+    console.log('test', location)
 
     return (<div>
-        <Header />
-
+        {!location.pathname.includes('signin') && !location.pathname.includes('joinin') && <Header/>}
         <main>
             <Routes>
                 <Route path='/' element={<Navigate to={'/woman'}/>}/>
+                <Route path={'/signin'} element={<RegistrationForm/>}/>
+                <Route path={'/joinin'} element={<RegistrationForm/>}/>
             </Routes>
         </main>
     </div>)

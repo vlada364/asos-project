@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Josefin+Sans:ital,wght@0,600;1,300&family=Montserrat:wght@300;600&family=Raleway:ital,wght@0,600;1,600&display=swap');
 
+
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
+    overflow: hidden;
 }
 
 .header {
@@ -13,6 +15,7 @@ body {
     align-items: center;
     box-sizing: border-box;
     flex-direction: column;
+    position: fixed;
 }
 
 .header img {
@@ -83,7 +86,9 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    z-index: 3;
+    z-index: auto;
+    /*position: fixed;*/
+    top: 0;
 }
 
 .window-wrapper {
@@ -93,7 +98,7 @@ body {
     height: 100vh;
     top: 0;
     background-color: rgba(0,0,0,0.4);
-    z-index: 1;
+    z-index: -3;
 
 }
 

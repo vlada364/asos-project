@@ -1,0 +1,24 @@
+.registrationContainer{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+}
+.linkAsos{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.registrationContainer img{
+    width: 8rem;
+}
+.formContainer{
+    width: 42rem;
+    height: 600px;
+    background-color: white;
+}

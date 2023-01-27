@@ -1,9 +1,9 @@
 import React from 'react';
+import styles  from "./SaleItem.module.css";
 
-type Props = {};
 
-const TypeList:React.FC<Props>=()=>{
-    return <></>;
+const TypeList = (props) => {
+    return (<li className={styles.listLi} id={props.id} key={props.key}>{props.name}</li>);
 }
 
 export default TypeList;
