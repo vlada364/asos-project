@@ -1,9 +1,9 @@
 import React from 'react';
 
-type Props = {};
 
-const SignIn:React.FC<Props>=()=>{
-    return <></>;
+
+const SignIn = () => {
+    return <div></div>;
 }
 
 export default SignIn;
