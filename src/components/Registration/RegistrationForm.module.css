@@ -63,10 +63,8 @@
 }
 
 .borderBetween {
-    --tw-border-opacity: 1;
-    border-color: rgb(209 213 219 / var(--tw-border-opacity));
-    border-width: 1px;
-    border-style: solid;
+    border:1px solid rgb(209 213 219);
+    height:24px;
 }
 
 .signIn {
@@ -157,7 +155,7 @@ h2 {
 .form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 10px;
 }
 .registrationForm h2{
     text-align: center;

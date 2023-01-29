@@ -12,6 +12,7 @@ const JoinIn = () => {
                 <label className={styles.nameLabel}> EMAIL ADDRESS:</label>
                 <div id="tooltip"></div>
                 <input id="email_address" className={styles.formInput} value="" type="text"/>
+                <div className={}><p>We'll send your order confirmation here</p></div>
                 <label className={styles.nameLabel}> FIRST NAME:</label>
                 <div id="tooltip_name"></div>
                 <input id="first_name" className={styles.formInput}
