@@ -186,9 +186,14 @@ h2 {
 }
 .formInput{
     position: relative;
-    padding: 18px 10px;
+    padding: 14px 34px;
     color: rgb(107 114 128);
     border:1px solid rgb(55 65 81);
+}
+.formTextInput{
+    display:flex;
+    flex-direction: column;
+    gap:4px;
 }
 .littleNote p{
     font-size: 12px;

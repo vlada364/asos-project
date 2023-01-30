@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './RegistrationForm.module.css'
 import SignUpWith from "./SignUpWith";
-import Form from './Form'
+import Form from './Form/Form'
 
 
 const JoinIn = () => {
