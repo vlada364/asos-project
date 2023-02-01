@@ -11,6 +11,8 @@ export const month = ["January", "February", "March", "April", "May", "June", "J
 export const date= new Date()
 export const year = date.getFullYear() - 16;
 
+export const today = new Date(date.getFullYear(), date.getMonth(), date.getDate())
+
 export const years = () => {
     let yearsArray = []
     for (let i = year; i >= 1900; i--) {

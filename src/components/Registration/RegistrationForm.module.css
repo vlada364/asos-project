@@ -194,6 +194,7 @@ h2 {
     display:flex;
     flex-direction: column;
     gap:4px;
+    position:relative;
 }
 .littleNote p{
     font-size: 12px;
@@ -296,3 +297,4 @@ h2 {
     font-weight: 300;
     justify-content: center;
 }
+
