@@ -8,7 +8,7 @@ import JoinIn from "./JoinIn";
 
 const RegistrationForm = () => {
     const location = useLocation();
-    const signIn=location.pathname.includes('/signin')
+    const signIn = location.pathname.includes('/signin')
 
     return (<div className={styles.registrationContainer}>
         <Link to={'/'}>
@@ -18,14 +18,18 @@ const RegistrationForm = () => {
         </Link>
         <div className={styles.formContainer}>
             <div className={styles.switch}>
-                <div className={styles.chooseBetween} >
-                    <div className={styles.blockForSwitch}>
-                        <div className={styles.join}>Join</div>
-                    </div>
+                <div className={styles.chooseBetween}>
+                    <Link to={'/joinin'}>
+                        <div className={styles.blockForSwitch} >
+                            <div className={styles.join}>Join</div>
+                        </div>
+                    </Link>
                     <div className={styles.borderBetween}></div>
-                    <div className={styles.blockForSwitch}>
-                        <div className={styles.signIn}>Sign In</div>
-                    </div>
+                    <Link to={'/signin'}>
+                        <div className={styles.blockForSwitch}>
+                            <div className={styles.signIn}>Sign In</div>
+                        </div>
+                    </Link>
                 </div>
                 {signIn ? <SignIn/> : <JoinIn/>}
 

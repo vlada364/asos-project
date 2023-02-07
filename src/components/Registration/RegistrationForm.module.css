@@ -51,11 +51,14 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    padding-top: 25px;
+    padding-bottom: 15px;
     border-bottom: 2px solid #f1f1f1;
 }
-
+/*.borderColor{*/
+/*    bottom:50%;*/
+/*    border-bottom: 2px solid #0770cf;*/
+/*}*/
 .blockForSwitch {
     padding: 0.875rem;
 }
@@ -183,12 +186,18 @@ h2 {
     cursor: pointer;
     font-size: 15px;
     letter-spacing: 1px;
+    margin-bottom: 11px;
 }
 .formInput{
     position: relative;
     padding: 14px 34px;
     color: rgb(107 114 128);
     border:1px solid rgb(55 65 81);
+}
+.formInput:hover{
+    border-color: #0770cf;
+    outline: none;
+    box-shadow: inset 0px 0px 3px 1px #0770cf;
 }
 .formTextInput{
     display:flex;
@@ -209,6 +218,9 @@ h2 {
     padding-top: 10px;
     padding-bottom: 10px;
     border:1px solid#767676;
+}
+.selectBlock:hover{
+    box-shadow: inset 0px 0px 3px 1px #0770cf;
 }
 .selectCategory{
     display: flex;
@@ -246,6 +258,7 @@ h2 {
     background-color: #eee;
     border-radius:2px;
     padding:10px;
+    cursor: pointer;
 }
 .inputSelectContainer{
     display:flex;

@@ -18,22 +18,27 @@ export function getAge(yearState, monthState, daysState) {
 };
 
 export function getTextAndTooltipVisibility(name, value) {
-    let isShown = value !== '', text;
-    if (name === 'email_address') {
-        isShown = isShown && checkEmailValid(value);
+    let text = '';
+    if (value.trim() ===''&& name === 'email_address') {
+        text = 'Oops! You need to type your email here'
+    } else if (value.trim() ==='' && name === 'first_name') {
+        text = 'We need your first name – it’s nicer that way'
+    } else if (value.trim() ==='' && name === 'last_name') {
+        text = 'Last name, too, please!'
+    } else if (value.trim() ==='' && name === 'password') {
+        text = 'Hey, we need a password here'
+    }
+    else if (name === 'email_address' && !checkEmailValid(value)) {
         text = tooltipText[2];
-    } else if (name === 'password') {
-        isShown = isShown && checkPassword(value);
+    } else if (name === 'password' && !checkPassword(value)) {
+        text = tooltipText[5];
+    } else if (name === 'first_name' && !checkFirstName(value)) {
         text = tooltipText[3];
-    } else if (name === 'first_name') {
-        isShown = isShown && checkFirstName(value);
-        text = tooltipText[0];
-    } else if (name === 'last_name') {
-        isShown = isShown && checkLastName(value);
-        text = tooltipText[1];
+    } else if (name === 'last_name' && !checkLastName(value)) {
+        text = tooltipText[4];
     }
 
-    return {isShown, text}
+    return text;
 }
 
 export function checkEmailValid(email) {

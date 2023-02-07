@@ -4,15 +4,15 @@ import Tooltip from "../../../common/components/Tooltip";
 import stylesTooltip from "../../../common/components/Components.module.css";
 
 
-const FormTextInput = ({label, id, hint, value, handleChangeInput, name,isTooltipShown,tooltipText}) => {
-    return <div className={styles.formTextInput + ' '+`${name}`} style={{position:'relative'}}>
+const FormTextInput = ({label, id, hint, value, handleChangeInput, name, tooltipText}) => {
+    return <div className={styles.formTextInput + ' ' + `${name}`} >
+        <div style={{position: 'relative',display:'flex',flexDirection:'column',gap:'4px'}}>
+        {(tooltipText) && <Tooltip text={tooltipText} className={stylesTooltip.tooltipVisible}/>}
         <label className={styles.nameLabel}> {label}</label>
         <div id="tooltip"></div>
-        <input id={id} className={styles.formInput} name={name} type="text" value={value} onChange={(e) => handleChangeInput(e)}/>
-        {(isTooltipShown) && <Tooltip text={tooltipText} className={stylesTooltip.tooltipVisible} />}
-        {/*{(!isFirstNameValid && name==='first_name'&& value!='')&&<Tooltip text={tooltipText[3]} className={stylesTooltip.tooltipVisible}/>}*/}
-        {/*{(!isLastNameValid && name==='last_name'&& value!='')&&<Tooltip text={tooltipText[3]} className={stylesTooltip.tooltipVisible}/>}*/}
-        {/*{(!isPasswordValid && name==='password'&& value!='')&&<Tooltip text={tooltipText[4]} className={stylesTooltip.tooltipVisible}/>}*/}
+        <input id={id} className={styles.formInput} name={name} type="text" value={value}
+               onChange={(e) => handleChangeInput(e)}/>
+        </div>
         {hint && <div className={styles.littleNote}><p>{hint}</p></div>}
     </div>;
 }
