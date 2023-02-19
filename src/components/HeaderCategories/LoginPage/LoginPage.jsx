@@ -4,6 +4,8 @@ import {HiOutlineUser} from 'react-icons/hi';
 import {AiOutlineHeart} from 'react-icons/ai';
 import {BsBag} from 'react-icons/bs'
 import UserMenu from "../UserMenu/UserMenu";
+import {useSelector} from "react-redux";
+import {RiUserFill} from 'react-icons/ri'
 
 
 const LoginPage = () => {
@@ -11,7 +13,7 @@ const LoginPage = () => {
     const [onHover, setOnHover] = useState(false);
     const [isUserMenuOpened, setMenuOpened] = useState(false);
     const didMount = useRef(false);
-
+    const loggedInSer = useSelector(state => state.users.loggedInUser);
     useEffect(() => {
         if (didMount.current) {
             if (isUserMenuOpened) {
@@ -85,7 +87,7 @@ const LoginPage = () => {
                  onMouseOver={onLoginIconOver}
                  onMouseEnter={onLoginIconEnter}
                  onMouseLeave={onLoginIconLeave} id={'user-icon'}>
-                <HiOutlineUser className={styles.loginIcon}/>
+                {loggedInSer?<RiUserFill className={styles.loginIcon}/>:<HiOutlineUser className={styles.loginIcon}/>}
             </div>
             <UserMenu tooltipRef={tooltipRef} onHover={onHover} onMouseLeave={onUserMenuLeave}
                       closeMenu={() => setMenuOpened(false)}/>

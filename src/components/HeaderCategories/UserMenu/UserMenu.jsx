@@ -9,6 +9,10 @@ import {CgBox} from 'react-icons/cg';
 import {RiQuestionLine} from 'react-icons/ri';
 import {MdOutlineSms} from 'react-icons/md';
 import UserMenuItem from "./UserMenuItem";
+import {useDispatch, useSelector} from "react-redux";
+import {useLocation} from "react-router";
+import {setLoggedInUser} from "../../../common/redux/users/actions";
+
 /*
 
 <UserMenuItem Icon={MdOutlineSms} title={"Manea"} linkTo={'/manea'}/>
@@ -16,23 +20,34 @@ import UserMenuItem from "./UserMenuItem";
 
 const UserMenu = ({tooltipRef, onMouseLeave, closeMenu}) => {
     // const [isCloseMenu, setCloseMenu] = useState(false)
+    const loggedInSer = useSelector(state => state.users.loggedInUser);
+    const dispatch = useDispatch();
+
+
     return (
         <div className={styles.tooltipContainer} ref={tooltipRef} onMouseLeave={onMouseLeave}>
             <div className={userMenuStyles.headerUserMenu}>
                 <div className={userMenuStyles.linkRegistration}>
-                    <Link to='/signin'>Sign In</Link>
+                    {loggedInSer ? `Hi ${loggedInSer.first_name}` : <Link to='/signin'>Sign In</Link>}
                     <RxDividerVertical/>
-                    <Link to='/joinin'>Join</Link>
+                    {loggedInSer ? <div onClick={() => {
+                            dispatch(setLoggedInUser(null));
+                            localStorage.removeItem('loggedUser')
+                        }}>Sign out</div> :
+                        <Link to='/joinin'>Join</Link>}
                 </div>
                 <div className={userMenuStyles.closeUserMenu} onClick={closeMenu}>
                     <div><GrClose className={userMenuStyles.iconClose}/></div>
                 </div>
             </div>
             <div className={userMenuStyles.userContact}>
-               <UserMenuItem Icon={HiOutlineUser} title={'My Account'} linksTo={'/myaccount'}/>
-                <UserMenuItem Icon={CgBox} title={'My Orders'} linksTo={'/myorders'}/>
-                <UserMenuItem Icon={RiQuestionLine} title={'Returns Information'} linksTo={'/information'}/>
-                <UserMenuItem Icon={MdOutlineSms} title={'Contact Preferences'} linksTo={'/contactus'}/>
+                <UserMenuItem Icon={HiOutlineUser} title={'My Account'}
+                              linksTo={loggedInSer ? '/myaccount' : '/signin'}/>
+                <UserMenuItem Icon={CgBox} title={'My Orders'} linksTo={loggedInSer ? '/myorders' : '/signin'}/>
+                <UserMenuItem Icon={RiQuestionLine} title={'Returns Information'}
+                              linksTo={loggedInSer ? '/information' : '/signin'}/>
+                <UserMenuItem Icon={MdOutlineSms} title={'Contact Preferences'}
+                              linksTo={loggedInSer ? '/contactus' : '/signin'}/>
             </div>
         </div>);
 }

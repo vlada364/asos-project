@@ -19,7 +19,6 @@ const CategoryHeader = ({isMenuOpen, idCategories, clothCategory, closeMenu, cha
 
                     }} onMouseLeave={(e) => {
                         const popup = document.getElementById('pop-up');
-                        console.log(isMenuOpen)
                         if (!popup.contains(e.relatedTarget)) {
                             closeMenu();
                         }

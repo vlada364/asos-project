@@ -1,20 +1,48 @@
 import './App.css';
 import Header from "./components/HeaderCategories/Header";
-import {Router, Route, Navigate, Routes, useLocation} from 'react-router'
-import React from "react";
+import {Route, Navigate, Routes, useLocation, useParams} from 'react-router'
+import React, {useEffect} from "react";
 import RegistrationForm from "./components/Registration/RegistrationForm";
+import {useDispatch, useSelector} from "react-redux";
+import MyAccount from "./components/HeaderCategories/UserMenu/UsersInfo/MyAccount/MyAccount";
+import UserStoreHelper from "./components/Registration/SelectDate/utils/UserStoreHelper";
+import {setLoggedInUser} from "./common/redux/users/actions";
+import BigPoster from "./components/HeaderCategories/UserMenu/UsersInfo/MyAccount/BigPoster";
+import OrdersUsers from "./components/HeaderCategories/UserMenu/UsersInfo/MyAccount/OrdersUsers";
+import UsersDetailsInfo from "./components/HeaderCategories/UserMenu/UsersInfo/MyAccount/UsersDetailsInfo";
 
 function App() {
     const location = useLocation();
-    console.log('test', location)
+    const loggedInSer = useSelector(state => state.users.loggedInUser);
+    console.log('test', location, loggedInSer);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const email = localStorage.getItem('loggedUser');
+        if (email) {
+            UserStoreHelper.getUser(email, (user) => {
+                dispatch(setLoggedInUser(user))
+            })
+        }
+    }, [])
+    const param = useParams()
+    console.log('param', param)
 
     return (<div>
-        {!location.pathname.includes('signin') && !location.pathname.includes('joinin') && <Header/>}
+        {!location.pathname.includes('signin') && !location.pathname.includes('joinin') && !location.pathname.includes('myaccount') &&
+            <Header/>}
         <main>
             <Routes>
                 <Route path='/' element={<Navigate to={'/woman'}/>}/>
-                <Route path={'/signin'} element={<RegistrationForm/>}/>
-                <Route path={'/joinin'} element={<RegistrationForm/>}/>
+                <Route path={'/signin'} element={loggedInSer === null ? <RegistrationForm/> : <Navigate to={'/'}/>}/>
+                <Route path={'/joinin'} element={loggedInSer === null ? <RegistrationForm/> : <Navigate to={'/'}/>}/>
+                <Route path={'/signout'} element={<Navigate to={'/'}/>}/>
+                <Route path={'/myaccount/'} element={loggedInSer === null ? <RegistrationForm/> : <MyAccount/>}>
+                    <Route path={'myorders'} element={<OrdersUsers/>}/>
+                    <Route path={'details'} element={<UsersDetailsInfo/>}/>
+                    <Route path={'change-password'} element={<UsersDetailsInfo/>}/>
+                    <Route index element={<BigPoster/>}/>
+                </Route>
             </Routes>
         </main>
     </div>)

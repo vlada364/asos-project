@@ -55,6 +55,7 @@
     padding-bottom: 15px;
     border-bottom: 2px solid #f1f1f1;
 }
+
 /*.borderColor{*/
 /*    bottom:50%;*/
 /*    border-bottom: 2px solid #0770cf;*/
@@ -69,8 +70,8 @@
 }
 
 .borderBetween {
-    border:1px solid rgb(209 213 219);
-    height:24px;
+    border: 1px solid rgb(209 213 219);
+    height: 24px;
 }
 
 .signIn {
@@ -100,7 +101,7 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    gap:4px;
+    gap: 4px;
 }
 
 .buttons {
@@ -159,10 +160,11 @@ h2 {
     margin-bottom: 2rem;
     font-size: 18px;
 }
-.contactPreferencesText p{
+
+.contactPreferencesText p {
     font-size: 14px;
     font-weight: 600;
-    color:#2d2d2d;
+    color: #2d2d2d;
 }
 
 /*form*/
@@ -172,14 +174,16 @@ h2 {
     flex-direction: column;
     gap: 10px;
 }
-.registrationForm h2{
+
+.registrationForm h2 {
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
     font-size: 16px;
 }
-.nameLabel{
-    display:flex;
+
+.nameLabel {
+    display: flex;
     justify-content: flex-start;
     gap: 0.5rem;
     color: rgb(107 114 128);
@@ -188,95 +192,111 @@ h2 {
     letter-spacing: 1px;
     margin-bottom: 11px;
 }
-.formInput{
+
+.formInput {
     position: relative;
-    padding: 14px 34px;
+    padding: 13px 13px;
     color: rgb(107 114 128);
-    border:1px solid rgb(55 65 81);
+    border: 1px solid rgb(55 65 81);
 }
-.formInput:hover{
+
+.formInput:hover {
     border-color: #0770cf;
     outline: none;
     box-shadow: inset 0px 0px 3px 1px #0770cf;
 }
-.formTextInput{
-    display:flex;
+
+.formTextInput {
+    display: flex;
     flex-direction: column;
-    gap:4px;
-    position:relative;
+    gap: 4px;
+    position: relative;
 }
-.littleNote p{
+
+.littleNote p {
     font-size: 12px;
     color: #767676;
     font-weight: 300;
     text-align: left;
     margin: 0 0 19px 0;
 }
-.selectBlock{
+
+.selectBlock {
     padding-right: 30px;
     padding-left: 5px;
     padding-top: 10px;
     padding-bottom: 10px;
-    border:1px solid#767676;
+    border: 1px solid #767676;
 }
-.selectBlock:hover{
+
+.selectBlock:hover {
     box-shadow: inset 0px 0px 3px 1px #0770cf;
 }
-.selectCategory{
+
+.selectCategory {
     display: flex;
-    justify-content:space-between;
-    gap:5px;
+    justify-content: space-between;
+    gap: 5px;
     align-items: center;
-    margin-bottom:18px;
+    margin-bottom: 18px;
 }
-.selectCategory label{
+
+.selectCategory label {
     font-size: 14px;
     font-weight: 300;
 }
-.radioCheck{
-    display:flex;
+
+.radioCheck {
+    display: flex;
     justify-content: space-between;
-    gap:8px;
-    text-align: center ;
+    gap: 8px;
+    text-align: center;
 }
-.radioCheck input{
-    color:black;
-    width:18px;
+
+.radioCheck input {
+    color: black;
+    width: 18px;
 }
-.contactPreferences{
-    display:flex;
+
+.contactPreferences {
+    display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    gap:38px;
+    gap: 38px;
     align-items: center;
     margin-bottom: 10px;
 }
-.selectAllBtn{
+
+.selectAllBtn {
     color: black;
     font-weight: 600;
     border: none;
     background-color: #eee;
-    border-radius:2px;
-    padding:10px;
+    border-radius: 2px;
+    padding: 10px;
     cursor: pointer;
 }
-.inputSelectContainer{
-    display:flex;
+
+.inputSelectContainer {
+    display: flex;
     flex-direction: column;
 }
-.inputSelectCategory{
-   display:flex;
+
+.inputSelectCategory {
+    display: flex;
     justify-content: space-between;
-    margin-bottom:18px;
+    margin-bottom: 18px;
 }
-.inputSelectCategory label{
+
+.inputSelectCategory label {
     font-weight: 600;
-    font-size:15px;
+    font-size: 15px;
 }
+
 .btnJoinAsos button {
     background-color: transparent;
     border: none;
-    color:white;
+    color: white;
     cursor: pointer;
     font-size: 15px;
     font-weight: bold;
@@ -284,7 +304,7 @@ h2 {
 }
 
 
-.btnJoinAsos{
+.btnJoinAsos {
     padding-right: 5rem;
     padding-left: 5rem;
     border: 2px solid #2d2d2d;
@@ -294,16 +314,17 @@ h2 {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-  margin-bottom:10px;
+    margin-bottom: 26px;
 }
 
 
-.registrationFormTwo{
+.registrationFormTwo {
     padding: 0 20px 0 20px;
     width: 70%;
 }
-.isForgotPassword{
-    display:flex;
+
+.isForgotPassword {
+    display: flex;
     text-align: center;
     align-content: center;
     font-size: 14px;
@@ -311,3 +332,37 @@ h2 {
     justify-content: center;
 }
 
+.warningMessage {
+    background-color: #fae7ec;
+    padding: 18px 12px;
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    gap: 12px;
+    font-weight: 300;
+    align-items: center;
+}
+
+.littleNoteSignIn {
+    font-weight: 300;
+    font-size: 12px;
+    text-align: center;
+}
+
+.footerInformation {
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    font-weight: 300;
+    gap: 10px;
+    text-align: center;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    cursor: pointer;
+
+}
+
+.footerPrivacyPolicy {
+    border-right: 1px solid #666;
+    padding: 0 10px;
+}

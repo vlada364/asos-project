@@ -1,5 +1,5 @@
 import React from 'react';
-import {useLocation, useRoutes} from "react-router";
+import {useLocation} from "react-router";
 import styles from './RegistrationForm.module.css';
 import {Link} from 'react-router-dom'
 import SignIn from "./SignIn";
@@ -34,6 +34,10 @@ const RegistrationForm = () => {
                 {signIn ? <SignIn/> : <JoinIn/>}
 
             </div>
+        </div>
+        <div className={styles.footerInformation}>
+            <div className={styles.footerPrivacyPolicy}>Privacy Policy </div>
+            <div>Terms and Conditions</div>
         </div>
     </div>)
         ;

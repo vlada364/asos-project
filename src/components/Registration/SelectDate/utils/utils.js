@@ -4,8 +4,44 @@ import {month} from "./constants";
 import {tooltipText} from "../../Form/Form";
 import {EMAIL_REGEXP, FIRST_NAME_REGEXP, LAST_NAME_REGEXP, PASSWORD_REGEXP} from "../../Regexp/Regexp";
 
+
+export  function countErrorsAndSetTooltips(formValues, changeFieldTooltip) {
+
+    let errorsCount = 0;
+    for (const key in formValues) {
+        console.log(key)
+        const value = formValues[key];
+        const text = getTextAndTooltipVisibility(key, value);
+        if (text !== '') {
+            errorsCount += 1;
+        }
+        if (changeFieldTooltip) {
+            changeFieldTooltip(key, text);
+        }
+    }
+    return errorsCount;
+}
 export function isDateValid(year, month, day) {
     return isValid(parse(`${day} ${month} ${year}`, 'd LLLL y', new Date()))
+
+}
+
+export const isDateValidHelper =(daysState,monthState,yearState)=> (name, value) => {
+
+    let day = daysState, month = monthState, year = yearState;
+    if (name === 'day') {
+        day = value;
+    } else if (name === 'month') {
+        month = value;
+    } else if (name === 'year') {
+        year = value;
+    }
+    const isDateValidField = isDateValid(year, month, day);
+    const areDateFieldsValid = !isDateValidField || !year || !month || !day;
+    const wasNotDateEdited = year === '' && month === '' && day === '';
+    const isDateValidErr = areDateFieldsValid;
+    const isAgeBelow16 = getAge(year, month, day) < 16;
+    return {isDateValidErr, isAgeBelow16, wasNotDateEdited: wasNotDateEdited}
 
 }
 
@@ -19,13 +55,15 @@ export function getAge(yearState, monthState, daysState) {
 
 export function getTextAndTooltipVisibility(name, value) {
     let text = '';
-    if (value.trim() ===''&& name === 'email_address') {
+    console.log(value,typeof value);
+    const trimmedValue=value?.trim()||'';
+    if (trimmedValue ===''&& name === 'email_address') {
         text = 'Oops! You need to type your email here'
-    } else if (value.trim() ==='' && name === 'first_name') {
+    } else if (trimmedValue ==='' && name === 'first_name') {
         text = 'We need your first name – it’s nicer that way'
-    } else if (value.trim() ==='' && name === 'last_name') {
+    } else if (trimmedValue ==='' && name === 'last_name') {
         text = 'Last name, too, please!'
-    } else if (value.trim() ==='' && name === 'password') {
+    } else if (trimmedValue ==='' && name === 'password') {
         text = 'Hey, we need a password here'
     }
     else if (name === 'email_address' && !checkEmailValid(value)) {
@@ -57,3 +95,4 @@ export function checkPassword(password) {
     return PASSWORD_REGEXP.test(password)
 
 }
+

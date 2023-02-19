@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import styles from './RegistrationForm.module.css'
 import registrationForm from "./RegistrationForm";
 import {useLocation} from "react-router";
