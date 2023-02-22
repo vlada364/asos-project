@@ -6,7 +6,7 @@ class UserStoreHelper {
         const openRequest = indexedDB.open('asos-db', 1);
         openRequest.onupgradeneeded = function (e) {
             let asosDb = e.target.result;
-            asosDb.createObjectStore(USER_STORE)
+            asosDb.createObjectStore(USER_STORE);
         }
     }
 
@@ -21,10 +21,10 @@ class UserStoreHelper {
             let tx = asosDb.transaction([USER_STORE], 'readwrite');
             const store = tx.objectStore(USER_STORE);
             if (method === 'put') {
-                store.put({...data}, data.email_address);
+                store.put(data, data.email_address);
 
             } else {
-                store.add({...data}, data.email_address);
+                store.add(data, data.email_address);
             }
             tx.onerror = (e) => {
                 console.error('ERROR TRANSACTION', e);

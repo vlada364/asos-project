@@ -198,6 +198,7 @@ h2 {
     padding: 13px 13px;
     color: rgb(107 114 128);
     border: 1px solid rgb(55 65 81);
+    margin-bottom: 10px;
 }
 
 .formInput:hover {

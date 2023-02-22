@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from './MyAccount.module.css'
+import styles from './MyAccount.module.css';
+
 
 
 const OrdersUsers= () => {

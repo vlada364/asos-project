@@ -19,19 +19,19 @@ export const infoForUser = [{icon: HiOutlineUser, name: 'Account overview', link
     icon: AiOutlineInbox,
     name: 'My orders',link:'myorders'
 }, {icon: RiFileUserLine, name: 'My details',link:'details'}, {icon: MdOutlineLock, name: 'Change password',link:'change-password'},
-    {icon: BsHouse, name: 'Address book',link:'/address-book'}, {icon: MdOutlinePayment, name: 'Payment methods',link:'/payment-methods'}, {
+    {icon: BsHouse, name: 'Address book',link:'address-book'}, {icon: MdOutlinePayment, name: 'Payment methods',link:'payment-methods'}, {
         icon: TbMessageDots,
         name: 'Contact preferences',
-        link:'/contact-preferences'
-    }, {icon: HiOutlineUsers, name: 'Social accounts',link:'/social-accounts'},
-    {icon: FiHelpCircle, name: 'Need help?',link:'/customer-help'}, {
+        link:'contact-preferences'
+    }, {icon: HiOutlineUsers, name: 'Social accounts',link:'social-accounts'},
+    {icon: FiHelpCircle, name: 'Need help?',link:'customer-help'}, {
         icon: IoIosSquareOutline,
-        name: `Where's my order?`,link:'/delivery'
-    }, {icon: IoIosSquareOutline, name: 'How do I make a return?',link:'/returns-refunds'}, {
+        name: `Where's my order?`,link:'delivery'
+    }, {icon: IoIosSquareOutline, name: 'How do I make a return?',link:'returns-refunds'}, {
         icon: IoIosSquareOutline,
-        name: 'I need a new returns note',link:'/how-can-i-get-a-new-returns-slip'
+        name: 'I need a new returns note',link:'how-can-i-get-a-new-returns-slip'
     },
-    {icon: BiExit, name: 'Sign out',link:'/sign-out'}]
+    {icon: BiExit, name: 'Sign out',link:'sign-out'}]
 
 const AccountUserInfo = () => {
 

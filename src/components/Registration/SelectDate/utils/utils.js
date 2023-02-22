@@ -5,12 +5,15 @@ import {tooltipText} from "../../Form/Form";
 import {EMAIL_REGEXP, FIRST_NAME_REGEXP, LAST_NAME_REGEXP, PASSWORD_REGEXP} from "../../Regexp/Regexp";
 
 
-export  function countErrorsAndSetTooltips(formValues, changeFieldTooltip) {
+export function countErrorsAndSetTooltips(formValues, changeFieldTooltip) {
 
     let errorsCount = 0;
     for (const key in formValues) {
         console.log(key)
         const value = formValues[key];
+        if(typeof value ==='boolean'){
+            continue;
+        }
         const text = getTextAndTooltipVisibility(key, value);
         if (text !== '') {
             errorsCount += 1;
@@ -21,12 +24,13 @@ export  function countErrorsAndSetTooltips(formValues, changeFieldTooltip) {
     }
     return errorsCount;
 }
+
 export function isDateValid(year, month, day) {
     return isValid(parse(`${day} ${month} ${year}`, 'd LLLL y', new Date()))
 
 }
 
-export const isDateValidHelper =(daysState,monthState,yearState)=> (name, value) => {
+export const isDateValidHelper = (daysState, monthState, yearState) => (name, value) => {
 
     let day = daysState, month = monthState, year = yearState;
     if (name === 'day') {
@@ -37,6 +41,7 @@ export const isDateValidHelper =(daysState,monthState,yearState)=> (name, value)
         year = value;
     }
     const isDateValidField = isDateValid(year, month, day);
+    console.log('test123',isDateValidField, year, month, day)
     const areDateFieldsValid = !isDateValidField || !year || !month || !day;
     const wasNotDateEdited = year === '' && month === '' && day === '';
     const isDateValidErr = areDateFieldsValid;
@@ -55,18 +60,17 @@ export function getAge(yearState, monthState, daysState) {
 
 export function getTextAndTooltipVisibility(name, value) {
     let text = '';
-    console.log(value,typeof value);
-    const trimmedValue=value?.trim()||'';
-    if (trimmedValue ===''&& name === 'email_address') {
+    console.log(value, typeof value);
+    const trimmedValue = value?.trim() || '';
+    if (trimmedValue === '' && name === 'email_address') {
         text = 'Oops! You need to type your email here'
-    } else if (trimmedValue ==='' && name === 'first_name') {
+    } else if (trimmedValue === '' && name === 'first_name') {
         text = 'We need your first name – it’s nicer that way'
-    } else if (trimmedValue ==='' && name === 'last_name') {
+    } else if (trimmedValue === '' && name === 'last_name') {
         text = 'Last name, too, please!'
-    } else if (trimmedValue ==='' && name === 'password') {
+    } else if (trimmedValue === '' && name === 'password') {
         text = 'Hey, we need a password here'
-    }
-    else if (name === 'email_address' && !checkEmailValid(value)) {
+    } else if (name === 'email_address' && !checkEmailValid(value)) {
         text = tooltipText[2];
     } else if (name === 'password' && !checkPassword(value)) {
         text = tooltipText[5];
@@ -74,6 +78,8 @@ export function getTextAndTooltipVisibility(name, value) {
         text = tooltipText[3];
     } else if (name === 'last_name' && !checkLastName(value)) {
         text = tooltipText[4];
+    }else if(name==='newPassword' && !checkPassword(value)){
+        text=tooltipText[5]
     }
 
     return text;

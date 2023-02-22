@@ -2,11 +2,11 @@ import React from 'react';
 import styles from "../RegistrationForm.module.css";
 
 
-
-const Checkbox = ({name,clickCheckbox,value}) => {
+const Checkbox = ({name, label, clickCheckbox, value}) => {
     return (<div className={styles.inputSelectCategory}>
-        <label>{name}</label>
-        <input type="checkbox" name={name} className="checkbox-input" checked={value} onClick={(e)=>clickCheckbox(e)}/>
+        <label>{label}</label>
+        <input type="checkbox" name={name} className="checkbox-input" value={value ? 'on' : "off"} checked={value}
+               onClick={clickCheckbox}/>
     </div>);
 }
 

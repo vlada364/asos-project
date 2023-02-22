@@ -1,35 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from "../RegistrationForm.module.css";
 import PreferencesCheckboxes from "./PreferencesCheckboxes";
-import {checkboxList} from "./PreferencesCheckboxes";
 
 
-const getSelectedAllCheckboxes = () => Object.fromEntries(checkboxList.map(el => [el.name, true]));
-
-const getInitCheckboxesState = () => Object.fromEntries(checkboxList.map(el => [el.name, false]));
-const PreferenceInputBlock = () => {
-    const [isChecked, setIsChecked] = useState(getInitCheckboxesState())
-
-    console.log('test', isChecked)
-
-    function clickCheckBox(e) {
-        setIsChecked(prevState => ({...prevState, [e.target.name]: !prevState[e.target.name]}))
-
-    }
-
-    function clearAll() {
-        setIsChecked(getInitCheckboxesState());
-    }
-
-    function selectAll() {
-        setIsChecked(getSelectedAllCheckboxes())
-    }
-
-    const isClearAll = Object.values(isChecked).every(Boolean);
-
-    function onClickSelectClear() {
-        isClearAll ? clearAll() : selectAll()
-    }
+const PreferenceInputBlock = ({clickCheckBox,preferenceCheckState,isClearAll,clearAll,selectAll,onClickSelectClear}) => {
 
 
     return <div>
@@ -47,7 +21,7 @@ const PreferenceInputBlock = () => {
                         onClick={onClickSelectClear}>{isClearAll ? "Clear all" : "Select all"}</button>
             </div>
         </div>
-        <PreferencesCheckboxes clickCheckBox={clickCheckBox} checkboxesState={isChecked}/>
+        <PreferencesCheckboxes clickCheckBox={clickCheckBox} checkboxesState={preferenceCheckState} />
     </div>;
 }
 
