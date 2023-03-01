@@ -36,9 +36,9 @@ export const addAddressBook=[{
 export const interestedIn = [{name: 'Womenswear', value: 'woman'}, {name: 'Menswear', value: 'man'}]
 export const tooltipText = [`That doesn\'t look right.Add your date of birth to get a birthday treat!`, `Oops. Looks like you're too young to use ASOS.`, 'Email fail! Please type in your correct email address', 'First name must not contain <, >, &, " or .', 'Last name must not contain <, >, &, " or .', 'Erm, you need 10 or more characters'];
 
-const getSelectedAllCheckboxes = () => Object.fromEntries(checkboxList.map(el => [el.name, true]));
+export const getSelectedAllCheckboxes = () => Object.fromEntries(checkboxList.map(el => [el.name, true]));
 
-const getInitCheckboxesState = () => Object.fromEntries(checkboxList.map(el => [el.name, false]));
+export const getInitCheckboxesState = () => Object.fromEntries(checkboxList.map(el => [el.name, false]));
 const Form = () => {
     const usersState = useSelector(state => state.users);
     const dispatch = useDispatch();
@@ -60,7 +60,7 @@ const Form = () => {
 
     }
 
-    function clearAll() {
+     function clearAll() {
         setPreferenceChecked(getInitCheckboxesState());
     }
 

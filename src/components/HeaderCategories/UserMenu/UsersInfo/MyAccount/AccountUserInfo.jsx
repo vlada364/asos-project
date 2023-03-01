@@ -19,7 +19,7 @@ export const infoForUser = [{icon: HiOutlineUser, name: 'Account overview', link
     icon: AiOutlineInbox,
     name: 'My orders',link:'myorders'
 }, {icon: RiFileUserLine, name: 'My details',link:'details'}, {icon: MdOutlineLock, name: 'Change password',link:'change-password'},
-    {icon: BsHouse, name: 'Address book',link:'address-book'}, {icon: MdOutlinePayment, name: 'Payment methods',link:'payment-methods'}, {
+    {icon: BsHouse, name: 'Address book',link:'addresses'},{icon: MdOutlinePayment, name: 'Payment methods',link:'payment-methods'}, {
         icon: TbMessageDots,
         name: 'Contact preferences',
         link:'contact-preferences'

@@ -3,6 +3,7 @@ import {isValid, parse, differenceInYears} from "date-fns";
 import {month} from "./constants";
 import {tooltipText} from "../../Form/Form";
 import {EMAIL_REGEXP, FIRST_NAME_REGEXP, LAST_NAME_REGEXP, PASSWORD_REGEXP} from "../../Regexp/Regexp";
+import {tr} from "date-fns/locale";
 
 
 export function countErrorsAndSetTooltips(formValues, changeFieldTooltip) {
@@ -80,6 +81,16 @@ export function getTextAndTooltipVisibility(name, value) {
         text = tooltipText[4];
     }else if(name==='newPassword' && !checkPassword(value)){
         text=tooltipText[5]
+    }else if(name==='mobile'&&trimmedValue===''){
+        text='Oops! We need your mobile number so we can tell you when your order is on its way.'
+    }else if(name==='countryCode'&& trimmedValue===''){
+        text='Please select country'
+    }else if(name==='address'&& trimmedValue===''){
+        text='Oops! You need to finish adding your address before you can continue.'
+    }else if(name==='city'&& trimmedValue===''){
+        text='Oops! You need to enter your city before you can continue.'
+    }else if(name==='postCode'&& trimmedValue===''){
+        text='Oops! You need to enter a postcode before you can continue.'
     }
 
     return text;
@@ -101,4 +112,11 @@ export function checkPassword(password) {
     return PASSWORD_REGEXP.test(password)
 
 }
-
+export function compareInitialAndCurrentValueForm(initial,current){
+    for (const initialKey in initial) {
+        if(initial[initialKey]!==current[initialKey]){
+            return false;
+        }
+    }
+    return true;
+}

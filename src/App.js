@@ -8,19 +8,27 @@ import MyAccount from "./components/HeaderCategories/UserMenu/UsersInfo/MyAccoun
 import UserStoreHelper from "./components/Registration/SelectDate/utils/UserStoreHelper";
 import {setLoggedInUser} from "./common/redux/users/actions";
 import BigPoster from "./components/HeaderCategories/UserMenu/UsersInfo/MyAccount/BigPoster";
-import OrdersUsers from "./components/HeaderCategories/UserMenu/UsersInfo/MyAccount/OrdersUsers";
+import OrdersUsers from "./components/HeaderCategories/UserMenu/UsersInfo/UserOrders/OrdersUsers";
 import UsersDetailsInfo from "./components/HeaderCategories/UserMenu/UsersInfo/UserDetails/UsersDetailsInfo";
 import UsersChangePasswordForm
     from "./components/HeaderCategories/UserMenu/UsersInfo/UserChangePassword/UsersChangePasswordForm";
 import UserAddressBook from "./components/HeaderCategories/UserMenu/UsersInfo/UserAddressBook/UserAddressBook";
 import UserPaymentMethod
-    from "./components/HeaderCategories/UserMenu/UsersInfo/MyAccount/UserPaymentMethod/UserPaymentMethod";
+    from "./components/HeaderCategories/UserMenu/UsersInfo/UserPaymentMethod/UserPaymentMethod";
+import UserContactPreferences
+    from "./components/HeaderCategories/UserMenu/UsersInfo/UserContactPreferences/UserContactPreferences";
+import ShowAddressesUser from "./components/HeaderCategories/UserMenu/UsersInfo/ShowAddressesUser/ShowAddressesUser";
+import {Link} from "react-router-dom";
+import AddressesItems from "./components/HeaderCategories/UserMenu/UsersInfo/ShowAddressesUser/AddressesItems";
+import AddressDetailsView from "./components/HeaderCategories/UserMenu/UsersInfo/UserAddressBook/AddressDetailsView";
+import Playground from "./components/Playground/Playground";
 
 function App() {
     const location = useLocation();
     const loggedInSer = useSelector(state => state.users.loggedInUser);
     console.log('test', location, loggedInSer);
     const dispatch = useDispatch();
+
 
     useEffect(() => {
         const email = localStorage.getItem('loggedUser');
@@ -32,9 +40,9 @@ function App() {
     }, [])
     const param = useParams()
     console.log('param', param)
-
+    const path = location.pathname;
     return (<div>
-        {!location.pathname.includes('signin') && !location.pathname.includes('joinin') && !location.pathname.includes('myaccount') &&
+        {!path.includes('signin') && !path.includes('joinin') && !path.includes('myaccount') && !path.includes('playground') &&
             <Header/>}
         <main>
             <Routes>
@@ -46,10 +54,15 @@ function App() {
                     <Route path={'myorders'} element={<OrdersUsers/>}/>
                     <Route path={'details'} element={<UsersDetailsInfo/>}/>
                     <Route path={'change-password'} element={<UsersChangePasswordForm/>}/>
-                    <Route path={'address-book'} element={<UserAddressBook/>}/>
+                    <Route path={'addresses'} element={<ShowAddressesUser/>}>
+                        <Route path={'add'} element={<UserAddressBook/>}/>
+                        <Route index element={<AddressDetailsView/>}/>
+                    </Route>
                     <Route path={'payment-methods'} element={<UserPaymentMethod/>}/>
+                    <Route path={'contact-preferences'} element={<UserContactPreferences/>}/>
                     <Route index element={<BigPoster/>}/>
                 </Route>
+                <Route path={'/playground'} element={<Playground/>}/>
             </Routes>
         </main>
     </div>)
