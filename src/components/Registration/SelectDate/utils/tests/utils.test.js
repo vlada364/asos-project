@@ -8,7 +8,10 @@ import {
     getTextAndTooltipVisibility,
     years,
     days,
-    isDateValidHelper
+    isDateValidHelper,
+    isDateValid,
+    transformIntoDate,
+    getAge
 } from "../utils";
 
 jest
@@ -154,6 +157,35 @@ describe('Select date utils', () => {
             })
         });
     });
+    describe('isDateValid', () => {
+        it('should return false if date is not chosen', () => {
+            expect(isDateValid('', '', '')).toBeFalsy()
+        });
 
+        it('should return false if it is invalid date ', () => {
+            expect(isDateValid('2020', 'February', '32')).toBeFalsy()
+        });
+
+        it('should return true if date is valid', () => {
+            expect(isDateValid('2017', 'March', '12')).toBeTruthy()
+        });
+
+    });
+    describe('giveBirth', () => {
+        it('should return date', () => {
+            const date = transformIntoDate('2010', 'April', '30');
+            expect(date instanceof Date).toBeTruthy();
+            expect([date.getFullYear(), date.getMonth(), date.getDate()]).toStrictEqual([
+                2010,
+                3,
+                30
+            ]);
+        })
+    });
+    describe('getAge', () => {
+        it('should return difference between dates', () => {
+            expect(getAge('2000', '4', '18')).toBe(20)
+        })
+    })
 
 });

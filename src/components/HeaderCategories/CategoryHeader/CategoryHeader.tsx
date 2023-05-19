@@ -2,11 +2,9 @@ import React from "react";
 import styles from './CategoryHeader.module.css'
 import clsx from "clsx";
 import {useNavigate} from "react-router";
+import {CategoryHeaderType} from "../types/HeaderCategoriesTypes";
 
-
-
-type CategoryHeader={isMenuOpen:string,idCategories:number,clothCategory:[],closeMenu:()=>void,changeId:()=>number,openMenu:()=>number}
-const CategoryHeader = ({isMenuOpen, idCategories, clothCategory, closeMenu, changeId, openMenu}) => {
+const CategoryHeader = ({isMenuOpen, idCategories, clothCategory, closeMenu, changeId, openMenu}:CategoryHeaderType) => {
     const location = useNavigate();
     console.log('kek', location)
 

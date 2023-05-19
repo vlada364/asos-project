@@ -47,12 +47,12 @@ export const isDateValidHelper = (daysState, monthState, yearState) => (name, va
 
 }
 
-export function giveBirth(yearState, monthState, daysState) {
+export function transformIntoDate(yearState, monthState, daysState) {
     return new Date(yearState, month.indexOf(monthState), daysState)
 }
 
 export function getAge(yearState, monthState, daysState) {
-    return differenceInYears(today(), giveBirth(yearState, monthState, daysState))
+    return differenceInYears(today(), transformIntoDate(yearState, monthState, daysState))
 };
 
 export function getTextAndTooltipVisibility(name, value) {

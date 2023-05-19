@@ -10,7 +10,7 @@ import userReducer from "./common/redux/users/userReducer";
 import clothesReducer from "./common/redux/clothes/clothesReducer";
 
 // TODO to read deprecation note
-let store = createStore(combineReducers({users: userReducer,clothes:clothesReducer}));
+export let store = createStore(combineReducers({users: userReducer,clothes:clothesReducer}));
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -22,9 +22,6 @@ const Header = () => {
         setIdCategories(id)
     }
 
-    function changeIdClothes(id) {
-        setClothesCategory(id)
-    }
 
     function openMenu(id) {
         console.log(id)
@@ -51,11 +48,11 @@ const Header = () => {
             </div>
         </div>
         <div style={{position: 'relative',width:"100%",zIndex:-2, display:"flex",justifyContent:'center'}}>
-            <CategoryHeader clothCategory={menuItems} idClothes={idClothesCategory} changeId={changeId}
+            <CategoryHeader clothCategory={menuItems}  changeId={changeId}
                             idCategories={idCategories} openMenu={openMenu} closeMenu={closeMenu}
                             isMenuOpen={isMenuOpen}/>
             {(isMenuOpen) && (<ClothesCategory isMenuOpen={isMenuOpen} closeMenu={closeMenu}
-                                               categoryItems={categoryItemsMap[idCategories]} id={idClothesCategory}/>)}
+                                               categoryItems={categoryItemsMap[idCategories]} />)}
         </div>
         <div className={'window-wrapper' + (isMenuOpen ? '' : '-block')}></div>
     </div>);

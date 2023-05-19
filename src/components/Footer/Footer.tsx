@@ -23,7 +23,7 @@ const footer=[{title:'HELP & INFORMATION',columns:helpInformationColumn},{title:
 const Footer: React.FC<Props> = () => {
     return <footer className={style.footerContainer}>
         <div className={style.footer}>
-            <div className={style.footerBlockRow}>
+            <div data-id={'lists'} className={style.footerBlockRow}>
                 {footer.map(el=>(<ul>{el.title}{el.columns.map(el=>(<FooterColumnInformation label={el.label} url={el.url}/>))}</ul>))}
                 <ul>SHOPPING FROM:</ul>
             </div>
