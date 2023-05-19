@@ -17,7 +17,7 @@ const CategoryHeader = ({isMenuOpen, idCategories, clothCategory, closeMenu, cha
 
                     return (
                         <li onMouseOver={() => {
-                            openMenu(el.id)
+                            openMenu()
                             changeId(el.id)
 
                         }} onMouseLeave={(e) => {

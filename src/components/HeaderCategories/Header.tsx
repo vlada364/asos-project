@@ -5,26 +5,23 @@ import {useState} from "react";
 import MenuLink from "./MenuLink";
 import {useLocation} from "react-router";
 import CategoryHeader from "./CategoryHeader/CategoryHeader";
-import {categoryItemsMap, menuItems, title} from "../../data/MenuItems";
+import {categoryItemsMap, menuItems} from "../../data/MenuItems";
 import ClothesCategory from "./ClothesCategory/ClothesCategory";
-import styles from "./LoginPage/LoginPage.module.css";
 
 
 const Header = () => {
 
     const {pathname} = useLocation();
-    const [isMenuOpen, setMenuOpen] = useState(false);
-    const [idCategories, setIdCategories] = useState(0)
+    const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
+    const [idCategories, setIdCategories] = useState<number>(0)
 
-    const [idClothesCategory, setClothesCategory] = useState(0)
 
-    function changeId(id) {
+    function changeId(id: number) {
         setIdCategories(id)
     }
 
 
-    function openMenu(id) {
-        console.log(id)
+    function openMenu() {
         setMenuOpen(true)
     }
 
@@ -47,12 +44,12 @@ const Header = () => {
                 <LoginPage/>
             </div>
         </div>
-        <div style={{position: 'relative',width:"100%",zIndex:-2, display:"flex",justifyContent:'center'}}>
-            <CategoryHeader clothCategory={menuItems}  changeId={changeId}
+        <div style={{position: 'relative', width: "100%", zIndex: -2, display: "flex", justifyContent: 'center'}}>
+            <CategoryHeader clothCategory={menuItems} changeId={changeId}
                             idCategories={idCategories} openMenu={openMenu} closeMenu={closeMenu}
                             isMenuOpen={isMenuOpen}/>
             {(isMenuOpen) && (<ClothesCategory isMenuOpen={isMenuOpen} closeMenu={closeMenu}
-                                               categoryItems={categoryItemsMap[idCategories]} />)}
+                                               categoryItems={categoryItemsMap[idCategories]}/>)}
         </div>
         <div className={'window-wrapper' + (isMenuOpen ? '' : '-block')}></div>
     </div>);
