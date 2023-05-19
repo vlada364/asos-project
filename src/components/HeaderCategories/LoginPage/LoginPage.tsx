@@ -10,10 +10,11 @@ import {useNavigate} from "react-router";
 
 
 const LoginPage = () => {
-    const tooltipRef = useRef();
-    const [onHover, setOnHover] = useState(false);
-    const [isUserMenuOpened, setMenuOpened] = useState(false);
-    const didMount = useRef(false);
+    const tooltipRef = React.useRef<HTMLInputElement>(null);
+    const [onHover, setOnHover] = useState<boolean>(false);
+    const [isUserMenuOpened, setMenuOpened] = useState<boolean>(false);
+    const didMount = useRef<boolean>(false);
+    //@ts-ignore
     const loggedInSer = useSelector(state => state.users.loggedInUser);
     const navigate=useNavigate()
     useEffect(() => {
