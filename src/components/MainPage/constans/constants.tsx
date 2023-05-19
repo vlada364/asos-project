@@ -1,7 +1,16 @@
-export const womenCategoriesRow = [
+export type ClothesImagesWithTitle={
+    img:string,
+    title:string,
+    paragraph:string,
+    btnText?:string
+}
+
+
+export const womenCategoriesRow:ClothesImagesWithTitle[] = [
     {
         img: 'https://content.asos-media.com/-/media/homepages/ww/2023/february/27-prime/moments/ww_global_jersey_layers_all_moment_870x1110.jpg',
-        title: 'SOFT LAYERS', paragraph: 'Comfy chic'
+        title: 'SOFT LAYERS',
+        paragraph: 'Comfy chic'
     },
     {
         img: 'https://content.asos-media.com/-/media/homepages/ww/2023/february/27-prime/moments/ww_global_asos_design_utility_moment_870x1110.jpg',
@@ -16,7 +25,7 @@ export const womenCategoriesRow = [
         title: 'THE INKEY LIST',
         paragraph: `The clock app's faves`
     }];
- export const womenTwoBigImage=[
+ export const womenTwoBigImage:ClothesImagesWithTitle[]=[
      {img:'https://content.asos-media.com/-/media/homepages/ww/2023/march/10-prime/50percent_moment_870x1110-(2).jpg',
          title:'NEW IN: DENIM ICONS',
          paragraph:'Fantasy fits',
@@ -28,7 +37,7 @@ export const womenCategoriesRow = [
          btnText: 'SHOP THE BRAND'
      }
  ]
-export const womenBrands=['https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/monkl-hp-logos-256x256.jpg',
+export const womenBrands:string[]=['https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/monkl-hp-logos-256x256.jpg',
     'https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/never-fully-dressed-hp-logos-256x256.png',
     'https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/1x12x---test.png',
     'https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/reclaimed-vintage-hp-logos-256x256.jpg',
@@ -36,7 +45,7 @@ export const womenBrands=['https://content.asos-media.com/-/media/homepages/unis
     'https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/weekday-hp-logos-256x256.jpg'
 ]
 
-export const  menBrands=[
+export const  menBrands:string[]=[
     'https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/tommy-hilfiger-hp-logos-256x256.jpg',
     'https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/north-face.png',
     'https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/adidas-hp-logos-256x256---v2.png',
@@ -44,7 +53,7 @@ export const  menBrands=[
     'https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/ellesse-hp-logos-256x256.jpg',
     'https://content.asos-media.com/-/media/homepages/unisex/brands-logos/256x256/dr-martens-hp-logos-256x256.jpg'
 ]
-export const menTwoBigImage=[
+export const menTwoBigImage:ClothesImagesWithTitle[]=[
     {img:'https://content.asos-media.com/-/media/homepages/mw/2023/february/27-prime/moments/mw_global_wedding_moment_870x1110.jpg',
         title:'BEST DRESSED',
         paragraph:`It's gonna be you`,
@@ -56,10 +65,11 @@ export const menTwoBigImage=[
         btnText: 'SHOP ASOS DESIGN'
     }
 ]
-export const menCategoriesRow=[
+export const menCategoriesRow:ClothesImagesWithTitle[]=[
     {
         img: 'https://content.asos-media.com/-/media/homepages/mw/2023/february/27-prime/moments/mw_global_start_of_summer_moment_870x1110.jpg',
-        title: 'SUMMER STARTERPACK', paragraph: 'Never too early...'
+        title: 'SUMMER STARTERPACK',
+        paragraph: 'Never too early...'
     },
     {
         img: 'https://content.asos-media.com/-/media/homepages/mw/2023/february/27-prime/moments/mw_global_new_balance_moment_870x1110.jpg',

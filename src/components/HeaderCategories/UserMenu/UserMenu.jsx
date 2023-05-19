@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from "../LoginPage/LoginPage.module.css";
 import userMenuStyles from './UserMenu.module.css';
 import {GrClose} from 'react-icons/gr';
@@ -19,7 +19,7 @@ import {setLoggedInUser} from "../../../common/redux/users/actions";
 <UserMenuItem Icon={MdOutlineSms} title={"Manea"} linkTo={'/manea'}/>
  */
 
-const UserMenu = ({tooltipRef, onMouseLeave, closeMenu}) => {
+const UserMenu = ({tooltipRef, onMouseLeave, closeMenu,onHover}) => {
 
     const loggedInSer = useSelector(state => state.users.loggedInUser);
     const isAdmin = loggedInSer?.email_address === 'admin@mail.ru'

@@ -6,8 +6,21 @@ import {BsBag} from 'react-icons/bs'
 import UserMenu from "../UserMenu/UserMenu";
 import {useSelector} from "react-redux";
 import {RiUserFill} from 'react-icons/ri'
-import {useNavigate} from "react-router";
+import {RelativeRoutingType,To} from "react-router";
 
+declare function useNavigate(): NavigateFunction;
+
+interface NavigateFunction {
+    (
+        to: To,
+        options?: {
+            replace?: boolean;
+            state?: any;
+            relative?: RelativeRoutingType;
+        }
+    ): void;
+    (delta: number): void;
+}
 
 const LoginPage = () => {
     const tooltipRef = React.useRef<HTMLInputElement>(null);
