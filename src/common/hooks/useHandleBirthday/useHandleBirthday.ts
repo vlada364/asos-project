@@ -9,7 +9,7 @@ const useHandleBirthday = (initialState, initialTooltipState) => {
 
     const [dateTooltip, setDateTooltipText] = useState(initialTooltipState);
 
-    const handleChangeDate = ({target: {name, value}}) => {
+    const handleChangeDate:React.ChangeEventHandler<HTMLSelectElement> = ({target: {name, value}}) => {
         console.log('TRIGGERED',name,value)
         if (name === 'day') {
             setDaysState(value);

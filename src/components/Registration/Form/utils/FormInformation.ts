@@ -5,7 +5,11 @@ export type LabelNameHintAndType = {
     label: string,
     name: string,
     hint?: string,
-    type: string
+    type: string;
+}
+
+export type Hint={
+    hint:string
 }
 
 export type Label = {
@@ -42,6 +46,6 @@ export const addAddressBook: NameAndLabel[] = [{
 }, {label: 'LAST NAME', name: 'last_name'}, {label: 'MOBILE', name: 'mobile'}]
 export const interestedIn:ValueAndName[]= [{name: 'Womenswear', value: 'woman'}, {name: 'Menswear', value: 'man'}]
 
-export const getSelectedAllCheckboxes = () => Object.fromEntries(checkboxList.map(el => [el.name, true]));
+export const getSelectedAllCheckboxes= () => Object.fromEntries(checkboxList.map(el => [el.name, true]));
 
 export const getInitCheckboxesState = () => Object.fromEntries(checkboxList.map(el => [el.name, false]));

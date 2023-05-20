@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from '../MyAccount/MyAccount.module.css'
 import FormTextInput from "../../../../Registration/FormTextInput/FormTextInput";
-import {registrationFormInputs, userDetailsFormInputs} from "../../../../Registration/Form/Form";
+import {registrationFormInputs, userDetailsFormInputs} from "../../../../Registration/Form/utils/FormInformation";
 import stylesForm from '../../../../Registration/RegistrationForm.module.css';
 import SelectDate from "../../../../Registration/SelectDate/SelectDate";
 import GenderCategoryInput from "../../../../Registration/PreferenceInputBlock/GenderCategoryInput";

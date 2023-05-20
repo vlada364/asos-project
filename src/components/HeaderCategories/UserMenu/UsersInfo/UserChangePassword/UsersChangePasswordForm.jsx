@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import stylesForm from "../../../../Registration/RegistrationForm.module.css";
-import {changePasswordInputs} from "../../../../Registration/Form/Form";
+import {changePasswordInputs} from "../../../../Registration/Form/utils/FormInformation";
 import FormTextInput from "../../../../Registration/FormTextInput/FormTextInput";
 import styles from "../MyAccount/MyAccount.module.css";
 import ChangesSaved from "../MyAccount/ChangesSaved/ChangesSaved";
@@ -13,7 +13,6 @@ import {
 import useFormToolsHelper from "../../../../../common/hooks/useFormToolsHelper/useFormToolsHelper";
 import {setLoggedInUser} from "../../../../../common/redux/users/actions";
 import {useDispatch} from "react-redux";
-import userStoreHelper from "../../../../Registration/SelectDate/utils/UserStoreHelper";
 import UserStoreHelper from "../../../../Registration/SelectDate/utils/UserStoreHelper";
 import {useEffect} from "react";
 

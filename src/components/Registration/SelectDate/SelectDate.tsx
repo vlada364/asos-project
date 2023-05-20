@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import styles from "../RegistrationForm.module.css";
 import {month} from "./utils/constants";
 import Tooltip from "../../../common/components/Tooltip";
 import stylesTooltip from "../../../common/components/Components.module.css";
 import {days, years} from "./utils/utils";
 
-
-const SelectDate = ({daysState, monthState, yearState, handleChangeDate, errorTooltipText}) => {
+type SelectDate={daysState?:string,monthState?:string,yearState?:string,handleChangeDate:React.ChangeEventHandler<HTMLSelectElement>,errorTooltipText:string}
+const SelectDate = ({daysState, monthState, yearState, handleChangeDate, errorTooltipText}:SelectDate) => {
 
 
     return (<div style={{display: 'flex', flexDirection: 'column'}}>

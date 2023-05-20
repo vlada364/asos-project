@@ -1,9 +1,13 @@
 import React from 'react';
 import styles from "../RegistrationForm.module.css";
 import InputPreferenceIn from "./InputPreferenceIn";
-import {interestedIn} from "../Form/Form";
+import {interestedIn} from "../Form/utils/FormInformation";
+import {MouseEventType} from "./InputPreferenceIn";
 
-const GenderCategoryInput = ({checkPreferences,selectedValue}) => {
+export type SelectedValue={
+    selectedValue:string
+}
+const GenderCategoryInput = ({checkPreferences,selectedValue}:MouseEventType&SelectedValue) => {
     return (
         <div>
             <div className={styles.nameLabel}>

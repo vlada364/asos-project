@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {FormEvent, useState} from 'react';
 import styles from "../RegistrationForm.module.css";
 import FormTextInput from "../FormTextInput/FormTextInput";
 import SelectDate from "../SelectDate/SelectDate";
@@ -9,12 +9,11 @@ import UserStoreHelper from "../SelectDate/utils/UserStoreHelper";
 import {useDispatch, useSelector} from "react-redux";
 import {setLoggedInUser} from "../../../common/redux/users/actions";
 import useHandleBirthday from "../../../common/hooks/useHandleBirthday/useHandleBirthday";
-import {userDetailsFormInputs, registrationFormInputs, getInitCheckboxesState, getSelectedAllCheckboxes, changePasswordInputs, addAddressBook, interestedIn} from "./utils/FormInformation";
-import {checkboxList} from "../PreferenceInputBlock/PreferencesCheckboxes";
-
+import {getInitCheckboxesState, getSelectedAllCheckboxes, registrationFormInputs} from "./utils/FormInformation";
 
 
 const Form = () => {
+    // @ts-ignore
     const usersState = useSelector(state => state.users);
     const dispatch = useDispatch();
 
@@ -28,14 +27,14 @@ const Form = () => {
     })
     const [preferenceCheckState, setPreferenceChecked] = useState(getInitCheckboxesState())
 
-    console.log('test', preferenceCheckState)
+
 
     function clickCheckBox(e) {
         setPreferenceChecked(prevState => ({...prevState, [e.target.name]: !prevState[e.target.name]}))
 
     }
 
-     function clearAll() {
+    function clearAll() {
         setPreferenceChecked(getInitCheckboxesState());
     }
 
@@ -62,12 +61,12 @@ const Form = () => {
         dateTooltip
     } = useHandleBirthday({day: "", month: "", year: ""}, '')
 
-    function handleChangeInput({target: {name, value}}) {
+    const handleChangeInput: React.ChangeEventHandler<HTMLInputElement> = ({target: {name, value}}) => {
         setInputStateValue(prevState => ({...prevState, [name]: value}));
 
         const text = getTextAndTooltipVisibility(name, value);
         changeFieldTooltip(name, text);
-    }
+    };
 
 
     function checkPreferences(e) {
@@ -104,7 +103,7 @@ const Form = () => {
             month: monthState,
             year: yearState
         };
-        console.log('NEW FORM VALUES',formValues)
+        console.log('NEW FORM VALUES', formValues)
 
 
         let errorsCount = countErrorsAndSetTooltips(formValues, changeFieldTooltip);
@@ -128,7 +127,6 @@ const Form = () => {
     return (<form id="form" className={styles.form} onSubmit={handleSubmit}>
         {registrationFormInputs.map(el => {
             return (<FormTextInput name={el.name} label={el.label} hint={el.hint} type={el.type}
-                                   inputStateValue={inputsValue}
                                    handleChangeInput={handleChangeInput}
                                    value={inputsValue[el.name]}
                                    tooltipText={tooltipsText[el.name]}

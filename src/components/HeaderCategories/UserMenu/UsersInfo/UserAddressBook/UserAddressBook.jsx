@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import styles from "../MyAccount/MyAccount.module.css";
 import stylesForm from "../../../../Registration/RegistrationForm.module.css";
-import {addAddressBook} from "../../../../Registration/Form/Form";
+import {addAddressBook} from "../../../../Registration/Form/utils/FormInformation";
 import FormTextInput from "../../../../Registration/FormTextInput/FormTextInput";
 import useFormToolsHelper from "../../../../../common/hooks/useFormToolsHelper/useFormToolsHelper";
 import {useDispatch, useSelector} from "react-redux";
