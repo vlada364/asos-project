@@ -5,8 +5,9 @@ import {useState} from "react";
 import MenuLink from "./MenuLink";
 import {useLocation} from "react-router";
 import CategoryHeader from "./CategoryHeader/CategoryHeader";
-import {categoryItemsMap, menuItems} from "../../data/MenuItems";
+import {categoryItemsMap} from "../../data/MenuItems";
 import ClothesCategory from "./ClothesCategory/ClothesCategory";
+import {menuItems} from "../../data/menuHeader/menuHeader";
 
 
 const Header = () => {

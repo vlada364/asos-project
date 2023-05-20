@@ -105,7 +105,7 @@ const LoginPage = () => {
                  onMouseLeave={onLoginIconLeave} id={'user-icon'}>
                 {loggedInSer?<RiUserFill className={styles.loginIcon}/>:<HiOutlineUser className={styles.loginIcon}/>}
             </div>
-            <UserMenu tooltipRef={tooltipRef} onHover={onHover} onMouseLeave={onUserMenuLeave}
+            <UserMenu tooltipRef={tooltipRef} onMouseLeave={onUserMenuLeave}
                       closeMenu={() => setMenuOpened(false)}/>
             <div className={styles.loginIconBtn}>
                 <AiOutlineHeart className={styles.favoriteIcon} onClick={()=>navigate('/favorite-clothes')}/>

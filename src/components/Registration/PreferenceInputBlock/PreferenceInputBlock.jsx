@@ -3,7 +3,7 @@ import styles from "../RegistrationForm.module.css";
 import PreferencesCheckboxes from "./PreferencesCheckboxes";
 
 
-const PreferenceInputBlock = ({clickCheckBox,preferenceCheckState,isClearAll,clearAll,selectAll,onClickSelectClear}) => {
+const PreferenceInputBlock = ({clickCheckBox,preferenceCheckState,isClearAll,onClickSelectClear}) => {
 
 
     return <div>

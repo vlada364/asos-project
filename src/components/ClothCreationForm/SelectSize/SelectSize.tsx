@@ -1,8 +1,8 @@
 import React from 'react';
 
-type Props = {name:string,label:string};
+export type NameAndLabel = {name:string,label:string};
 
-const SelectSize: React.FC<Props> = ({name,label}) => {
+const SelectSize: React.FC<NameAndLabel> = ({name,label}) => {
     return <option value={name}>{label}</option>;
 }
 

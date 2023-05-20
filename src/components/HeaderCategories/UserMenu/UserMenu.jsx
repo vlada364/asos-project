@@ -19,7 +19,7 @@ import {setLoggedInUser} from "../../../common/redux/users/actions";
 <UserMenuItem Icon={MdOutlineSms} title={"Manea"} linkTo={'/manea'}/>
  */
 
-const UserMenu = ({tooltipRef, onMouseLeave, closeMenu,onHover}) => {
+const UserMenu = ({tooltipRef, onMouseLeave, closeMenu}) => {
 
     const loggedInSer = useSelector(state => state.users.loggedInUser);
     const isAdmin = loggedInSer?.email_address === 'admin@mail.ru'
