@@ -9,48 +9,59 @@ import {
     clothesCategorySportsWearOne,
     clothesCategorySportsWearThree,
     clothesCategorySportsWearTwo,
-
-    clothesCategoryTopShopOne,
-    clothesCategoryTopShopThree,
-    clothesCategoryTopShopTwo,
-
     clothesCategoryWinterFour,
     clothesCategoryWinterOne,
     clothesCategoryWinterThree,
     clothesCategoryWinterTwo
 } from "./menuHeader/menuHeader";
 import './menuHeader/categoryItemsGridColumns';
-import {clothesCategory,clothesCategoryClothingOne,
+import {
+    clothesCategory, clothesCategoryClothingOne,
     clothesCategoryClothingThree,
     clothesCategoryClothingTwo,
     clothesCategoryDressesFour,
     clothesCategoryDressesOne,
     clothesCategoryDressesThree,
-    clothesCategoryDressesTwo,clothesCategoryNewInOne,
+    clothesCategoryDressesTwo, clothesCategoryNewInOne,
     clothesCategoryNewInThree,
     clothesCategoryNewInTwo,
     clothesCategoryNewYearFour,
     clothesCategoryNewYearOne,
     clothesCategoryNewYearThree,
-    clothesCategoryNewYearTwo,clothesCategoryThree,clothesCategoryTwo,} from './menuHeader/menuHeaderClothes';
-import {clothesCategoryShoesOne,
+    clothesCategoryNewYearTwo, clothesCategoryThree, clothesCategoryTwo,
+} from './menuHeader/menuHeaderClothes';
+import {
+    clothesCategoryShoesOne,
     clothesCategoryShoesThree,
-    clothesCategoryShoesTwo} from './menuHeader/menuHeaderShoesCategory';
+    clothesCategoryShoesTwo
+} from './menuHeader/menuHeaderShoesCategory';
 
-import { clothesCategoryAccessoriesFour,
+import {
+    clothesCategoryAccessoriesFour,
     clothesCategoryAccessoriesOne,
     clothesCategoryAccessoriesThree,
-    clothesCategoryAccessoriesTwo,} from './menuHeader/menuHeaderAccessoriesCategory';
+    clothesCategoryAccessoriesTwo,
+} from './menuHeader/menuHeaderAccessoriesCategory';
 
-import { clothesCategoryOutletOne,
+import {
+    clothesCategoryOutletOne,
     clothesCategoryOutletThree,
-    clothesCategoryOutletTwo,clothesCategoryBrandsOne,
+    clothesCategoryOutletTwo, clothesCategoryBrandsOne,
     clothesCategoryBrandsThree,
-    clothesCategoryBrandsTwo,} from './menuHeader/menuHeaderOutletAndBrandsCategory';
-import {  clothesCategoryFaceBodyFour,
+    clothesCategoryBrandsTwo,
+} from './menuHeader/menuHeaderOutletAndBrandsCategory';
+import {
+    clothesCategoryFaceBodyFour,
     clothesCategoryFaceBodyOne,
     clothesCategoryFaceBodyThree,
-    clothesCategoryFaceBodyTwo,} from './menuHeader/menuHeaderFaceBodyCategory';
+    clothesCategoryFaceBodyTwo,
+} from './menuHeader/menuHeaderFaceBodyCategory';
+
+import {
+    clothesCategoryTopShopOne,
+    clothesCategoryTopShopThree,
+    clothesCategoryTopShopTwo,
+} from './menuHeader/menuHeaderTopShop'
 
 
 type FirstHeaderPage =

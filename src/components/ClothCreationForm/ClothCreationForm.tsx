@@ -7,45 +7,11 @@ import adminPanel from '../adminPanel/AdminPanel.module.css';
 import SelectSize from '../ClothCreationForm/SelectSize/SelectSize'
 import Select from 'react-select';
 import ClothesStoreHelper, {Cloth} from "../adminPanel/utils/ClothesStoreHelper";
+import {clothesInfo,categoriesArray, sizesArray, genderArr} from "./utils/ClothesInfo";
 
 
 type Props = {};
-const clothesInfo = [{name: 'clothes_name', label: 'CLOTHES NAME:'}, {name: 'colour', label: 'COLOUR:'}, {
-    name: 'price',
-    label: 'PRICE'
-}]
 
-const sizesArray = [{value: 'eu_32', label: 'EU 32'}, {value: 'eu_34', label: 'EU 34'}, {
-    value: 'eu_36',
-    label: 'EU 36'
-}, {value: 'eu_38', label: 'EU 38'},
-    {value: 'eu_40', label: 'EU 40'}, {value: 'eu_42', label: 'EU 42'}, {value: 'eu_44', label: 'EU 44'}, {
-        value: 'eu_46',
-        label: 'EU 46'
-    }, {value: 'eu_48', label: 'EU 48'}]
-
-const categoriesArray = [{value: 'Clothing', label: 'Clothing'}, {value: 'Shoes', label: 'Shoes'}, {
-    value: 'Dresses',
-    label: 'Dresses'
-},
-    {value: 'Coats&Jackets', label: 'Coats & Jackets'}, {value: 'Tops', label: 'Tops'}, {
-        value: 'Sportswear',
-        label: 'Sportswear'
-    },
-    {value: 'Jumpers&Cardigans', label: 'Jumpers & Cardigans'}, {
-        value: 'Tracksuits&Joggers',
-        label: 'Tracksuits & Joggers'
-    },
-    {value: 'Blazers', label: 'Blazers'}, {value: 'CargoTrousers', label: 'Cargo Trousers'}, {
-        value: 'Trainers',
-        label: 'Trainers'
-    },
-    {value: 'Boots', label: 'Boots'}, {value: 'FlatShoes', label: 'Flat shoes'}, {
-        value: 'Heels',
-        label: 'Heels'
-    }, {value: 'Loafers', label: 'Loafers'}, {value: 'RunningTrainers', label: 'Running Trainers'},
-    {value: 'Sandals', label: 'Sandals'}];
-const genderArr=[{value:'woman',label:'woman'},{value:'man',label:'man'}];
 type ArrayElement<A> = A extends readonly (infer T)[] ? T : never
 
 const ClothCreationForm: React.FC<Props> = () => {
