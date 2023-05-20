@@ -70,8 +70,7 @@ function App() {
         fetchData();
     }, []);
 
-    const param = useParams()
-    console.log('MANIK', loggedInSer)
+
     const path = location.pathname;
     const isHeaderDisplayed = !path.includes('signin') && !path.includes('joinin') && !path.includes('myaccount') && !path.includes('playground') && !path.includes('/admin');
 

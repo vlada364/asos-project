@@ -9,35 +9,11 @@ import UserStoreHelper from "../SelectDate/utils/UserStoreHelper";
 import {useDispatch, useSelector} from "react-redux";
 import {setLoggedInUser} from "../../../common/redux/users/actions";
 import useHandleBirthday from "../../../common/hooks/useHandleBirthday/useHandleBirthday";
+import {userDetailsFormInputs, registrationFormInputs, getInitCheckboxesState, getSelectedAllCheckboxes, changePasswordInputs, addAddressBook, interestedIn} from "./utils/FormInformation";
 import {checkboxList} from "../PreferenceInputBlock/PreferencesCheckboxes";
 
 
-export const registrationFormInputs = [{
-    label: 'EMAIL ADDRESS:', name: 'email_address', hint: `We'll send your order confirmation here`, type: 'text'
-}, {
-    label: 'FIRST NAME:', name: 'first_name', type: 'text'
-}, {
-    label: 'LAST NAME:', name: 'last_name', type: 'text'
-}, {
-    label: 'PASSWORD:', name: 'password', hint: 'Must be 10 or more characters', type: 'password'
-}];
 
-export const userDetailsFormInputs = registrationFormInputs.filter(elem => elem.type !== 'password');
-
-export const changePasswordInputs = [{
-    label: "YOUR CURRENT PASSWORD*",
-    name: "password",
-    type: 'password'
-}, {label: "NEW PASSWORD*", name: "newPassword", type: "password",hint: 'Must be 10 or more characters'}]
-
-export const addAddressBook=[{
-    label:'FIRST NAME',name:'first_name'
-},{label:'LAST NAME',name:'last_name'},{label:'MOBILE',name:'mobile'}]
-export const interestedIn = [{name: 'Womenswear', value: 'woman'}, {name: 'Menswear', value: 'man'}]
-
-export const getSelectedAllCheckboxes = () => Object.fromEntries(checkboxList.map(el => [el.name, true]));
-
-export const getInitCheckboxesState = () => Object.fromEntries(checkboxList.map(el => [el.name, false]));
 const Form = () => {
     const usersState = useSelector(state => state.users);
     const dispatch = useDispatch();

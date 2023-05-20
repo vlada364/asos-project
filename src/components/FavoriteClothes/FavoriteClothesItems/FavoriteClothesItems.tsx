@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
-import ClothesStoreHelper, {Cloth} from "../../adminPanel/utils/ClothesStoreHelper";
+import React from 'react';
+
 import Select, {GroupBase} from 'react-select';
 import style from './FavoriteClothesItems.module.css';
 import {MdOutlineDelete} from 'react-icons/md'
-import BasketStoreHelper from "../../adminPanel/utils/BasketStoreHelper";
 import {PublicBaseSelectProps} from "react-select/base";
 
 export type SizesObj = { value: string, label: string }
