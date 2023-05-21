@@ -51,9 +51,8 @@ const FavoriteClothes: React.FC<Props> = () => {
 
     // @ts-ignore
     function deleteClothFromFavorites(id) {
-        console.log(id)
+
         const newFavClothes = favoriteIds.filter((el) => el !== id);
-        console.log('newFavClothes', newFavClothes);
 
         userStoreHelper.addUser({...loggedInSer, favorites: [...newFavClothes]}, () => {
             dispatch(setFavoriteItems(newFavClothes))

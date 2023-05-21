@@ -20,7 +20,7 @@ import {setLoggedInUser} from "../../../common/redux/users/actions";
  */
 
 const UserMenu = ({tooltipRef, onMouseLeave, closeMenu}) => {
-
+  //@ts-ignore
     const loggedInSer = useSelector(state => state.users.loggedInUser);
     const isAdmin = loggedInSer?.email_address === 'admin@mail.ru'
     const dispatch = useDispatch();

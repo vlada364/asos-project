@@ -15,6 +15,7 @@ import useHandleBirthday from "../../../../../common/hooks/useHandleBirthday/use
 
 
 const UsersDetailsInfo = () => {
+    //@ts-ignore
     const loggedInSer = useSelector(state => state.users.loggedInUser);
     const dispatch = useDispatch();
     const [isChangesSaved, setChangesSaved] = useState(false);
@@ -53,7 +54,7 @@ const UsersDetailsInfo = () => {
         const text = getTextAndTooltipVisibility(name, value);
         changeFieldTooltip(name, text);
     }
-
+//@ts-ignore
     function onSuccessSubmit(value) {
 
         const email = localStorage.getItem('loggedUser');
@@ -70,9 +71,7 @@ const UsersDetailsInfo = () => {
             localStorage.setItem('loggedUser', value.email_address);
 
         }, () => {
-            console.log('ERRORRR')
             changeFieldTooltip('email_address', "This email is already exists")
-
         })
     }
 

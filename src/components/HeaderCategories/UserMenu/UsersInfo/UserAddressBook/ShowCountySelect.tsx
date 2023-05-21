@@ -1,6 +1,6 @@
 import React from 'react';
 import FormTextInput from "../../../../Registration/FormTextInput/FormTextInput";
-import {addInputsValueByCountry} from "./UserAddressBook";
+import {addInputsValueByCountry} from "../MyAccount/data/AccountInfo";
 import InputsInfoByCountry from "./InputsInfoByCountry";
 import stylesForm from "../../../../Registration/RegistrationForm.module.css";
 

@@ -23,16 +23,10 @@ import UserAddressBookHeaderWithNoAddressInfo from "./UserAddressBookHeaderWithN
 import ShowAddressesUser from "../ShowAddressesUser/ShowAddressesUser";
 
 
-export const addInputsValueByCountry = [{label: 'ADDRESS:', name: 'address'}, {
-    label: 'ADDRESS TWO:',
-    name: 'addressTwoOptional'
-}, {label: 'CITY:', name: 'city'},
-    {label: 'COUNTY:', name: 'countyOptional'}, {label: 'POSTCODE:', name: 'postCode'}]
 
-export const addressFinder = [{label: 'ADDRESS FINDER:', name: 'addressFinder'}]
 
 const UserAddressBook = () => {
-
+    //@ts-ignore
     const loggedInSer = useSelector(state => state.users.loggedInUser);
     const dispatch = useDispatch()
 
@@ -131,7 +125,7 @@ const UserAddressBook = () => {
                     <form id='form-address-book' className={stylesForm.form} onSubmit={handleSubmit}>
                         {addAddressBook.map(el => (
                                 <FormTextInput name={el.name} label={el.label} value={inputsValue[el.name]}
-                                               tooltipText={tooltipsText[el.name]} type={el.type}
+                                               tooltipText={tooltipsText[el.name]} type={''}
                                                handleChangeInput={handleChangeInput}
                                 />))}
 

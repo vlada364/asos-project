@@ -9,6 +9,7 @@ import WarningMessage from "../../../../Registration/SelectDate/WarningMessage";
 import WarningHaveNotAddressInfo from "./WarningHaveNotAddressInfo";
 
 const AddressDetailsView = () => {
+    //@ts-ignore
     const loggedInSer = useSelector(state => state.users.loggedInUser);
     const fullName = `${loggedInSer.first_name} ${loggedInSer.last_name}`
     const loggedInSerArray = [loggedInSer.address, loggedInSer.addressTwoOptional, loggedInSer.city, loggedInSer.countryCode, loggedInSer.postCode, loggedInSer.mobile]

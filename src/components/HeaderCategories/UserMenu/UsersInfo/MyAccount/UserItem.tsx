@@ -1,6 +1,6 @@
 import React from 'react';
 import UserItems from "./UserItems";
-import {infoForUser} from "./AccountUserInfo";
+import {infoForUser} from "./data/AccountInfo";
 
 
 

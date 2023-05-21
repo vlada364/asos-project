@@ -2,8 +2,8 @@ import React from 'react';
 import styles from "../RegistrationForm.module.css";
 import Tooltip from "../../../common/components/Tooltip";
 import stylesTooltip from "../../../common/components/Components.module.css";
-import {LabelNameHintAndType, Value} from "../Form/utils/FormInformation";
-
+import {Value} from "../Form/utils/FormInformation";
+import {LabelAndName} from "../../ClothCreationForm/utils/ClothesInfo";
 import {ChangeEvent} from "react";
 
 
@@ -15,7 +15,15 @@ export type Id={
 
 export type ChangeInput={handleChangeInput:(e:ChangeEvent<HTMLInputElement>)=>void}
 
-export type FormTextInput = LabelNameHintAndType & Value & TooltipText & Id & ChangeInput ;
+export type TypeInput={
+    type?:string
+}
+type Hint={
+    hint?:string
+}
+
+
+export type FormTextInput = LabelAndName & Value & TooltipText & Id & ChangeInput & TypeInput & Hint ;
 const FormTextInput = ({label, id, hint, value, handleChangeInput, name, tooltipText, type}:FormTextInput) => {
     return <div className={styles.formTextInput + ' ' + `${name}`}>
         <div style={{position: 'relative', display: 'flex', flexDirection: 'column', gap: '4px'}}>

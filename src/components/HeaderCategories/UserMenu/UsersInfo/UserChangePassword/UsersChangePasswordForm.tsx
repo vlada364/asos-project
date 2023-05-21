@@ -21,7 +21,9 @@ const formInitialState = {
 };
 
 const UsersChangePasswordForm = () => {
+    //@ts-ignore
     const {password: userPassword} = useSelector(state => state.users.loggedInUser);
+    //@ts-ignore
     const user = useSelector(state => state.users.loggedInUser);
 
     const {

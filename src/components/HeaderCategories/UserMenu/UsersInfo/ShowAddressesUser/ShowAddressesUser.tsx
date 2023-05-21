@@ -11,6 +11,7 @@ import UserHeader from "../UserAddressBook/UserHeader";
 
 const ShowAddressesUser = () => {
 // TODO use location
+    //@ts-ignore
     const loggedInSer = useSelector(state => state.users.loggedInUser);
     return <div className={styles.ordersUsers}>
         {loggedInSer.countryCode?<UserHeader/>:<UserAddressBookHeaderWithNoAddressInfo/>}

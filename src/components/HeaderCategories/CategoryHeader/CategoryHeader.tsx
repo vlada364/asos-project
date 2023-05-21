@@ -6,7 +6,6 @@ import {CategoryHeaderType} from "../types/HeaderCategoriesTypes";
 
 const CategoryHeader = ({isMenuOpen, idCategories, clothCategory, closeMenu, changeId, openMenu}:CategoryHeaderType) => {
     const location = useNavigate();
-    console.log('kek', location)
 
     return (<div className={styles.headerCategory}>
         <div className={styles.categoryListContainer}>

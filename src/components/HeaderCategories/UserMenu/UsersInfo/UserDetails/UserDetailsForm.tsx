@@ -26,7 +26,6 @@ const UserDetailsForm = ({
             <form id='edit-form' className={stylesForm.form} onSubmit={handleSubmit}>
                 {userDetailsFormInputs.map(el => {
                     return (<FormTextInput name={el.name} label={el.label} type={el.type}
-                                           inputStateValue={inputsValue}
                                            handleChangeInput={handleChangeInput}
                                            value={inputsValue[el.name]}
                                            tooltipText={tooltipsText[el.name]}
