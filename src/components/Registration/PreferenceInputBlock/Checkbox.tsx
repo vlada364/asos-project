@@ -3,18 +3,18 @@ import styles from "../RegistrationForm.module.css";
 import {NameAndLabel} from "../Form/utils/FormInformation";
 import {MouseEvent} from "react";
 
-type ClickCheckbox = {
-    clickCheckbox: (e: React.MouseEvent<HTMLInputElement>) => void
+export type ClickCheckbox = {
+    clickCheckBox: (e: React.MouseEvent<HTMLInputElement>) => void
 }
 
-type Value = {
+export type Value = {
     value?: boolean
 }
-const Checkbox = ({name, label, clickCheckbox, value}: NameAndLabel & Value & ClickCheckbox) => {
+const Checkbox = ({name, label, clickCheckBox, value}: NameAndLabel & Value & ClickCheckbox) => {
     return (<div className={styles.inputSelectCategory}>
         <label>{label}</label>
         <input type="checkbox" name={name} className="checkbox-input" value={value ? 'on' : "off"} checked={value}
-               onClick={clickCheckbox}/>
+               onClick={clickCheckBox}/>
     </div>);
 }
 

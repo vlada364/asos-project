@@ -1,9 +1,14 @@
 import React from 'react';
 import styles from "../RegistrationForm.module.css";
 import PreferencesCheckboxes from "./PreferencesCheckboxes";
+import {FunctionCheckBox,PreferenceCheck,IsClear,OnClickEvent} from './types/PreferenceInputBlockTypes'
 
 
-const PreferenceInputBlock = ({clickCheckBox,preferenceCheckState,isClearAll,onClickSelectClear}) => {
+
+export type InputBlock=FunctionCheckBox & PreferenceCheck & IsClear & OnClickEvent
+
+
+const PreferenceInputBlock = ({clickCheckBox,preferenceCheckState,isClearAll,onClickSelectClear}:InputBlock) => {
 
 
     return <div>

@@ -141,7 +141,7 @@ const Form = () => {
         <div className={styles.littleNote}><p className="text-gray-400">You need to be 16 or over to use ASOS</p>
         </div>
         <GenderCategoryInput checkPreferences={checkPreferences} selectedValue={gender}/>
-        <PreferenceInputBlock clickCheckBox={clickCheckBox} clearAll={clearAll} selectAll={selectAll}
+        <PreferenceInputBlock clickCheckBox={clickCheckBox}
                               isClearAll={isClearAll} preferenceCheckState={preferenceCheckState}
                               onClickSelectClear={onClickSelectClear}/>
         <div className={styles.btnJoinAsos}>

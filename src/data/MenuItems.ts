@@ -103,11 +103,11 @@ export type TwelfthHeaderPage =
 export type ThirteenthHeaderPage = TwelfthHeaderPage
 export type GridColumns = { gridColumns: string };
 
-export type CategoryItemsMap = {
+export type CategoryItemsMapType = {
     1: FirstHeaderPage, 2: SecondHeaderPage, 3: ThirdHeaderPage, 4: FourthHeaderPage, 5: FifthHeaderPage, 6: SixthHeaderPage, 7: SeventhHeaderPage,
     8: EighthHeaderPage, 9: NinthHeaderPage, 10: TenthHeaderPage, 11: EleventhHeaderPage, 12: TwelfthHeaderPage, 13: ThirteenthHeaderPage, 14: []
 };
-export const categoryItemsMap: CategoryItemsMap = {
+export const categoryItemsMap: CategoryItemsMapType = {
     1: [clothesCategory, clothesCategoryTwo, clothesCategoryThree],
     2: [clothesCategoryNewInOne, clothesCategoryNewInTwo, clothesCategoryNewInThree],
     3: [clothesCategoryNewYearOne, clothesCategoryNewYearTwo, clothesCategoryNewYearThree, clothesCategoryNewYearFour],
