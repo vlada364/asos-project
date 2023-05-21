@@ -7,33 +7,27 @@ import userStoreHelper from "./SelectDate/utils/UserStoreHelper";
 import WarningMessage from "./SelectDate/WarningMessage";
 import {useDispatch} from "react-redux";
 import {setLoggedInUser} from "../../common/redux/users/actions";
+import {textWarningMessage, textInputSignIn} from './SignIn/SignInConst/SignInConst'
+import {EmailAndPassword} from "./SignIn/types/SignIn";
 
 
-const textInputSignIn = [
-    {
-        label: 'EMAIL ADDRESS', name: 'email_address'
-    }, {
-        label: 'PASSWORD', name: 'password',type:'password'
-    }
-]
-const textWarningMessage = 'Looks like either your email address or password were incorrect. Wanna try again?';
 const SignIn = () => {
     const dispatch=useDispatch();
 
-    const [inputsSignInValue, setInputsSignInValue] = useState({
+    const [inputsSignInValue, setInputsSignInValue] = useState<EmailAndPassword>({
         email_address: '', password: ''
     })
-    const [tooltipsText, setTooltipsTextState] = useState({
+    const [tooltipsText, setTooltipsTextState] = useState<EmailAndPassword>({
         email_address: '', password: ''
     })
 
-    const [isWarningMessageShown, setWarningMessage] = useState(false)
-    const changeFieldTooltip = (name, text) => setTooltipsTextState((prev) => ({
+    const [isWarningMessageShown, setWarningMessage] = useState<boolean>(false)
+    const changeFieldTooltip = (name:string, text:string) => setTooltipsTextState((prev) => ({
         ...prev,
         [name]: text
     }))
 
-    function handleChangeInput({target: {name, value}}) {
+    const handleChangeInput:React.ChangeEventHandler<HTMLInputElement>=({target: {name, value}})=>{
         setInputsSignInValue(prevState => ({...prevState, [name]: value}));
         const text = getTextAndTooltipVisibility(name, value);
         changeFieldTooltip(name, text);

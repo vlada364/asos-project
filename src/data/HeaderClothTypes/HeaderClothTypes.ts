@@ -14,6 +14,9 @@ export type Name = {
 export type Title = {
     title: string
 }
+export type TypeString={
+    type?:string
+}
 export type Type = {
     type: HEADER_BLOCK_TYPE;
 }
