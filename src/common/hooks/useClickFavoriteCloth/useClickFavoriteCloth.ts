@@ -1,18 +1,18 @@
 import {useDispatch, useSelector, useStore} from "react-redux";
 import UserStoreHelper from "../../../components/Registration/SelectDate/utils/UserStoreHelper";
 import {addFavoriteItem} from "../../redux/clothes/actions";
+import {RootState} from "../../../index";
 
 const useClickFavoriteCloth=()=>{
-    // @ts-ignore
-    const favoriteItems = useSelector(state => state.clothes.favoriteItems);
-    // @ts-ignore
-    const loggedInSer = useSelector(state => state.users.loggedInUser);
+
+    const favoriteItems = useSelector((state:RootState) => state.clothes.favoriteItems);
+    const loggedInSer = useSelector((state:RootState) => state.users.loggedInUser);
 
     const dispatch = useDispatch();
     const {getState} = useStore();
-    console.log('favoriteItems',favoriteItems)
+
     const clickOnFavorite=(id:number)=>{
-        console.log('idiidi',id)
+
         const isClothInFavorite = favoriteItems.includes(id);
 
 
@@ -32,8 +32,7 @@ const useClickFavoriteCloth=()=>{
             }
             dispatch(addFavoriteItem(id));
 
-            //@ts-ignore
-            localStorage.setItem('favoriteClothes', getState().clothes.favoriteItems)
+            localStorage.setItem('favoriteClothes', (getState() as RootState).clothes.favoriteItems.toString())
         }
     }
     return clickOnFavorite

@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {addFavoriteItem} from "../../../common/redux/clothes/actions";
 import UserStoreHelper from "../../Registration/SelectDate/utils/UserStoreHelper";
 import useClickFavoriteCloth from "../../../common/hooks/useClickFavoriteCloth/useClickFavoriteCloth";
+import {RootState} from "../../../index";
 
 
 type Sizes = { value: string, label: string }
@@ -15,16 +16,16 @@ const ClothDescription: React.FC<Props> = ({name, price, colour, sizes, id}) => 
     const [sizesSelected, setSizes] = useState(sizes[0]);
     const clickFavorite = useClickFavoriteCloth();
 
-    // @ts-ignore
-    const favoriteItems = useSelector(state => state.clothes.favoriteItems);
-    // @ts-ignore
-    const loggedInSer = useSelector(state => state.users.loggedInUser);
-    console.log(favoriteItems, loggedInSer, 'favorite')
+
+    const favoriteItems = useSelector((state:RootState) => state.clothes.favoriteItems);
+
+    const loggedInSer = useSelector((state:RootState) => state.users.loggedInUser);
+
 
 
     function selectGender(event) {
         setSizes(event)
-        console.log(event, 'EVENT')
+
     }
 
     const isClothInFavorite = favoriteItems.includes(id);

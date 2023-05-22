@@ -33,12 +33,12 @@ const SignIn = () => {
         changeFieldTooltip(name, text);
     }
 
-    function successSubmit(email, password) {
+    function successSubmit(email:string, password:string) {
         userStoreHelper.getUser(email, (result) => {
-            console.log('УСПЕХ', result)
+
             const foundPassword = result.password;
+
             if (foundPassword === password) {
-                // мы сохраняем result в глобальный state в redux, теперь мы авторизированы
                 dispatch(setLoggedInUser(result));
                 localStorage.setItem('loggedUser',result.email_address)
             } else {
@@ -47,12 +47,19 @@ const SignIn = () => {
         })
     }
 
-    function handleSubmit(e) {
-        e.preventDefault()
-        const formValues = Object.fromEntries([...(new FormData(e.target))])
+    function handleSubmit(e:React.SyntheticEvent) {
+        e.preventDefault();
+        const target = e.target as HTMLFormElement;
+        const formData = new FormData(target);
+        const formValues: { [key: string]: any } = {};
+        formData.forEach((value, key) => {
+            formValues[key] = value;
+        });
+
         const email = formValues.email_address;
+
         const password = formValues.password;
-        console.log(formValues)
+
         let errorsCount = countErrorsAndSetTooltips(formValues);
         successSubmit(email, password)
     }

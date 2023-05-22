@@ -50,7 +50,7 @@ class BasketStoreHelper{
         const db=BasketStoreHelper.getDB();
         db.onsuccess=function(){
             let result=db.result;
-            console.log('kekes',email)
+
             let request=result.transaction([BASKET_STORE],"readonly").objectStore(BASKET_STORE).get(email)
             request.onsuccess=function (){
                 onSuccess(request.result)

@@ -15,16 +15,18 @@ import {setLoggedInUser} from "../../../../../common/redux/users/actions";
 import {useDispatch} from "react-redux";
 import UserStoreHelper from "../../../../Registration/SelectDate/utils/UserStoreHelper";
 import {useEffect} from "react";
+import {RootState} from "../../../../../index";
+import {User} from "../../../../../common/types/user/User";
 
 const formInitialState = {
     password: '', newPassword: ''
 };
 
 const UsersChangePasswordForm = () => {
-    //@ts-ignore
-    const {password: userPassword} = useSelector(state => state.users.loggedInUser);
-    //@ts-ignore
-    const user = useSelector(state => state.users.loggedInUser);
+
+    const {password: userPassword} = useSelector((state:RootState) => state.users.loggedInUser);
+
+    const user = useSelector((state:RootState) => state.users.loggedInUser);
 
     const {
         setDisabled,
@@ -90,7 +92,7 @@ const UsersChangePasswordForm = () => {
             setChangesSaved(true);
             setDisabled(false);
             const newUser = {...user, password: newPassword};
-            UserStoreHelper.addUser(newUser, () => {
+            UserStoreHelper.addUser(newUser as User, () => {
                 dispatch(setLoggedInUser(newUser));
             }, () => {
             }, 'put');

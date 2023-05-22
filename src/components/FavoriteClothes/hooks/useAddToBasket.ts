@@ -3,12 +3,13 @@ import BasketStoreHelper from "../../adminPanel/utils/BasketStoreHelper";
 import {BasketCloth, SizesObj} from "../../../common/types/user/User";
 import {setClothesAdd} from "../../../common/redux/clothes/actions";
 import {useDispatch, useSelector} from "react-redux";
+import {RootState} from "../../../index";
 
 const useAddToBasket=(selectSize:SizesObj[])=>{
-    // @ts-ignore
-    const loggedInSer = useSelector(state => state.users.loggedInUser);
-    // @ts-ignore
-    const basketClothes: any[] = useSelector(state => state.clothes.basketItems);
+
+    const loggedInSer = useSelector((state:RootState) => state.users.loggedInUser);
+
+    const basketClothes = useSelector((state:RootState)=> state.clothes.basketItems);
     const dispatch = useDispatch();
 
 

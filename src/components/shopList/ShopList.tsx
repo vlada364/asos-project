@@ -23,7 +23,7 @@ const ShopList: React.FC<Props> = () => {
 
     function changeSelectByPrice(event) {
         setSortByPrice(event);
-        console.log('event', event);
+
     }
 
 
@@ -56,7 +56,7 @@ const ShopList: React.FC<Props> = () => {
 
     function changeSelectBySize(event) {
         setSortBySize(event);
-        console.log('eveeent', event);
+
     }
 
     function handleChanges(event, newValue) {
@@ -84,7 +84,7 @@ const ShopList: React.FC<Props> = () => {
     }
 
 
-    console.log('HUIPUTALA 1', clothes)
+
     return <div style={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
         <div className={style.clothCategoryName}>Dresses</div>
         <div className={style.containerSelect}>
@@ -102,7 +102,6 @@ const ShopList: React.FC<Props> = () => {
                 <div><Select isMulti
                              components={{
                                  Option: ({children, ...rest}) => {
-                                     console.log(rest, 'rest');
                                      return (<components.Option {...rest}>
                                          <div style={{display: "flex"}}>
                                              <div style={{
@@ -135,7 +134,6 @@ const ShopList: React.FC<Props> = () => {
                 <div><Select isMulti
                              components={{
                                  Option: ({children, ...rest}) => {
-                                     console.log(rest, 'rest');
                                      return (<components.Option {...rest}>
                                          <div style={{display: "flex"}}>
                                              <input type="range" min="0" max="510"/>

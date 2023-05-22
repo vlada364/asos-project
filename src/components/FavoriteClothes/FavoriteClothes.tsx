@@ -7,28 +7,35 @@ import userStoreHelper from "../Registration/SelectDate/utils/UserStoreHelper";
 import {setFavoriteItems} from "../../common/redux/clothes/actions";
 import NoSavedItems from "./NoSavedItems/NoSavedItems";
 import useAddToBasket from "./hooks/useAddToBasket";
+import {RootState} from "../../index";
 
 type Props = {};
 
 const FavoriteClothes: React.FC<Props> = () => {
-    // @ts-ignore
-    const loggedInSer = useSelector(state => state.users.loggedInUser);
+
+    const loggedInSer = useSelector((state:RootState)=> state.users.loggedInUser);
     const [favoriteClothes, setFavoriteClothes] = useState<Cloth[]>([]);
-    // @ts-ignore
-    const favoriteIds: number[] = useSelector(state => state.clothes.favoriteItems);
+
+    const favoriteIds: number[] = useSelector((state:RootState) => state.clothes.favoriteItems);
     const dispatch = useDispatch();
 
-    const sizes = favoriteClothes.map(el => el.sizes)
-    const [selectSize, setSelectSize] = useState<SizesObj[]>(sizes[0])
+    const sizes = favoriteClothes.map(el => el.sizes);
+    const [selectSize, setSelectSize] = useState<SizesObj[]>(sizes[0]);
     const isUser = localStorage.getItem('loggedUser');
     const addToBasket=useAddToBasket(selectSize);
+
+    useEffect(()=>{
+        if(!selectSize){
+            setSelectSize(sizes[0]);
+        }
+    },[favoriteClothes])
 
     function selectSizeEvent(event) {
         setSelectSize(event)
         console.log(event)
     }
 
-    const getClothAsync = (id: number) => new Promise((resolve) => {
+    const getClothAsync = (id) => new Promise((resolve) => {
         const store = new ClothesStoreHelper();
         store.getClothById(id, (cloth) => {
             resolve(cloth);
@@ -41,6 +48,7 @@ const FavoriteClothes: React.FC<Props> = () => {
         for (const favoriteId of favoriteIds) {
             clothes.push(await getClothAsync(favoriteId));
         }
+        console.log('GOT ALL CLOTHES',clothes);
         setFavoriteClothes(clothes);
     }
 
@@ -49,7 +57,7 @@ const FavoriteClothes: React.FC<Props> = () => {
         getAllFavorites();
     }, [favoriteIds]);
 
-    // @ts-ignore
+
     function deleteClothFromFavorites(id) {
 
         const newFavClothes = favoriteIds.filter((el) => el !== id);
@@ -63,11 +71,12 @@ const FavoriteClothes: React.FC<Props> = () => {
         localStorage.setItem('favoriteClothes', storageIds.toString());
     }
 
+    console.log('SIZE',selectSize)
 
     return <div className={style.favClothesContainer}>
         <div className={style.heading}><span>Saved Items</span></div>
         <div className={style.favClothes}>
-            {favoriteClothes.length !== 0 ? (favoriteClothes.map((el) => (
+            {favoriteClothes.length !== 0 && selectSize ? (favoriteClothes.map((el) => (
                 <FavoriteClothesItems clothes_name={el.clothes_name}
                                       images={URL.createObjectURL(el.images[0] as unknown as File)}
                                       price={el.price}

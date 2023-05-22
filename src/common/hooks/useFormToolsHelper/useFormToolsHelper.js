@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {getInitCheckboxesState} from "../../../components/Registration/Form/Form";
 
+
 const useFormToolsHelper = (initialState, initialTooltipsState) => {
     const [inputsValue, setInputStateValue] = useState(initialState);
     const [tooltipsText, setTooltipsTextState] = useState(initialTooltipsState);

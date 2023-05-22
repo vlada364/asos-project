@@ -17,7 +17,7 @@ const ClothPage: React.FC<Props> = () => {
 
     useEffect(() => {
         const store = new ClothesStoreHelper()
-        store.getClothById(params.id, function (cloth: Cloth) {
+        store.getClothById(Number(params.id), function (cloth: Cloth) {
 
             setCloth(cloth);
             setImages(cloth.images.map((file) => URL.createObjectURL(file as unknown as File)))
@@ -32,19 +32,21 @@ const ClothPage: React.FC<Props> = () => {
     function clickImg(index) {
         setBigImage(index)
     }
-  function scrollLeft(){
-        if(bigImage===0){
-            setBigImage(images.length-1)
-        }else{
-            setBigImage((prevState) => prevState-1)
+
+    function scrollLeft() {
+        if (bigImage === 0) {
+            setBigImage(images.length - 1)
+        } else {
+            setBigImage((prevState) => prevState - 1)
         }
-        console.log('Left')
-  }
-    function scrollRight(){
-        if(bigImage===images.length-1){
+
+    }
+
+    function scrollRight() {
+        if (bigImage === images.length - 1) {
             setBigImage(0)
-        }else{
-            setBigImage((prevState) => prevState+1)
+        } else {
+            setBigImage((prevState) => prevState + 1)
         }
     }
 
@@ -62,7 +64,8 @@ const ClothPage: React.FC<Props> = () => {
                     </div>
                 </div>
             </div>
-            <ClothDescription name={cloth.clothes_name} price={cloth.price} colour={cloth.colour} sizes={cloth.sizes} id={cloth.id}/>
+            <ClothDescription name={cloth.clothes_name} price={cloth.price} colour={cloth.colour} sizes={cloth.sizes}
+                              id={cloth.id}/>
         </div>
     </div>
         ;

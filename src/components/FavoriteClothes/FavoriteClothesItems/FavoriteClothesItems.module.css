@@ -1,20 +1,23 @@
-.favoriteCloth{
+.favoriteCloth {
     font-size: 14px;
     flex-grow: 1;
     max-width: fit-content
 }
-.infoNonControl img{
-    width:300px;
+
+.infoNonControl img {
+    width: 300px;
     position: relative;
 }
-.infoNonControl{
-    display:flex;
+
+.infoNonControl {
+    display: flex;
     flex-direction: column;
-    width:300px;
-    gap:12px;
+    width: 300px;
+    gap: 12px;
     padding-bottom: 27px;
 }
-.btnDeleteCloth{
+
+.btnDeleteCloth {
     width: 38px;
     height: 38px;
     border: 2px solid white;
@@ -26,41 +29,46 @@
     position: absolute;
     top: 6px;
     right: 5px;
-    cursor:pointer;
+    cursor: pointer;
 }
-.btnDeleteCloth svg{
+
+.btnDeleteCloth svg {
     font-size: 24px;
 }
 
-.clothName{
+.clothName {
     font-weight: 300;
     font-size: 13px;
     color: black;
-    height:38px;
+    height: 38px;
 }
-.clothPrice{
+
+.clothPrice {
     color: #666;
     font-size: 16px;
 }
-.clothColor{
+
+.clothColor {
     border-bottom: 1px solid #ddd;
-    border-top:1px solid #ddd;
-    color:#ddd;
+    border-top: 1px solid #ddd;
+    color: #ddd;
     font-family: Montserrat;
     font-size: 12px;
     margin-bottom: 20px;
 }
-.chooseSize{
-    padding:18px 0 18px 0;
+
+.chooseSize {
+    padding: 18px 0 18px 0;
 }
-.moveClothToBag{
+
+.moveClothToBag {
 
     background: transparent;
-    border: 2px solid #018849;;
+    border: 2px solid #018849;
     box-sizing: border-box;
     color: inherit;
     cursor: pointer;
-    font-family: futura-pt,Tahoma,Geneva,Verdana,Arial,sans-serif;
+    font-family: futura-pt, Tahoma, Geneva, Verdana, Arial, sans-serif;
     font-size: 14px;
     font-weight: 700;
     letter-spacing: .8px;
@@ -68,4 +76,17 @@
     padding: 4px 0;
     text-transform: uppercase;
     width: 100%;
+}
+
+.moveClothToBag :hover {
+    background: black;
+    cursor: pointer;
+    color: white;
+    font-family: futura-pt, Tahoma, Geneva, Verdana, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    padding: 4px 0;
+    text-transform: uppercase;
 }

@@ -10,14 +10,15 @@ import {useDispatch, useSelector} from "react-redux";
 import {setLoggedInUser} from "../../../common/redux/users/actions";
 import useHandleBirthday from "../../../common/hooks/useHandleBirthday/useHandleBirthday";
 import {getInitCheckboxesState, getSelectedAllCheckboxes, registrationFormInputs} from "./utils/FormInformation";
+import {RootState} from "../../../index";
 
 
 const Form = () => {
-    // @ts-ignore
-    const usersState = useSelector(state => state.users);
+
+    const usersState = useSelector((state:RootState) => state.users);
     const dispatch = useDispatch();
 
-    console.log('REDUX STATE', usersState);
+
     const [inputsValue, setInputStateValue] = useState({
         email_address: '', first_name: '', last_name: '', password: ''
     });
@@ -85,7 +86,7 @@ const Form = () => {
             // что-то , когда удача
             dispatch(setLoggedInUser(value));
             localStorage.setItem('loggedUser', value.email_address);
-            console.log('REGISTERED', value);
+
         }, () => {
             changeFieldTooltip('email_address', "This email is already exists")
 
@@ -94,7 +95,6 @@ const Form = () => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log('FORM', e.target);
         const formValues = {
             ...inputsValue,
             ...preferenceCheckState,
@@ -103,20 +103,20 @@ const Form = () => {
             month: monthState,
             year: yearState
         };
-        console.log('NEW FORM VALUES', formValues)
+
 
 
         let errorsCount = countErrorsAndSetTooltips(formValues, changeFieldTooltip);
-        console.log(tooltipsText)
+
         const {isDateValidErr, isAgeBelow16, wasNotDateEdited} = isDateValidHelper(daysState, monthState, yearState)();
-        console.log('errcount111', errorsCount, isDateValidErr, isAgeBelow16, !wasNotDateEdited)
+
 
         if (isDateValidErr || isAgeBelow16 || wasNotDateEdited) {
             errorsCount += 1;
         }
         setDateTooltip(isDateValidErr, isAgeBelow16, wasNotDateEdited)
         // проверить,что нет ошибок
-        console.log('errcount', errorsCount)
+
         if (errorsCount === 0) {
             //submit tyt
             onSuccessSubmit(formValues);

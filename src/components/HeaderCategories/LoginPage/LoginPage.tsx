@@ -7,6 +7,7 @@ import UserMenu from "../UserMenu/UserMenu";
 import {useSelector} from "react-redux";
 import {RiUserFill} from 'react-icons/ri'
 import {useNavigate} from "react-router";
+import {RootState} from "../../../index";
 
 
 const LoginPage = () => {
@@ -14,8 +15,8 @@ const LoginPage = () => {
     const [onHover, setOnHover] = useState<boolean>(false);
     const [isUserMenuOpened, setMenuOpened] = useState<boolean>(false);
     const didMount = useRef<boolean>(false);
-    //@ts-ignore
-    const loggedInSer = useSelector(state => state.users.loggedInUser);
+
+    const loggedInSer = useSelector((state:RootState) => state.users.loggedInUser);//
     const navigate=useNavigate()
     useEffect(() => {
         if (didMount.current) {

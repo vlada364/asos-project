@@ -1,4 +1,5 @@
 import {SET_CLOTHES_ADD, ADD_FAVORITE_ITEM, SET_FAVORITE_ITEM} from "./actions";
+import {ClothesAction} from "../types/reduxTypes";
 
 
 const initialState={
@@ -6,7 +7,8 @@ const initialState={
     favoriteItems:[]
 }
 
-const clothesReducer=(state=initialState,action)=>{
+
+const clothesReducer=(state=initialState,action:ClothesAction)=>{
     switch (action.type) {
         case SET_CLOTHES_ADD:
             return {...state,basketItems: action.payload};

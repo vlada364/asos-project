@@ -4,7 +4,6 @@ import styles from "../Registration/RegistrationForm.module.css";
 import ImageUploader from 'react-images-upload';
 import ImagesAdded from "./ImagesAdded/ImagesAdded";
 import adminPanel from '../adminPanel/AdminPanel.module.css';
-import SelectSize from '../ClothCreationForm/SelectSize/SelectSize'
 import Select from 'react-select';
 import ClothesStoreHelper, {Cloth} from "../adminPanel/utils/ClothesStoreHelper";
 import {clothesInfo,categoriesArray, sizesArray, genderArr} from "./utils/ClothesInfo";

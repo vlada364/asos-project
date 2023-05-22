@@ -1,9 +1,7 @@
 import React from 'react';
 import userMenuStyles from "./UserMenu.module.css";
-import {HiOutlineUser} from "react-icons/hi";
 import {Link} from 'react-router-dom'
 import linkStyles from '../../../common/styles/link/link.module.css'
-import {TitleAndLinksTo} from "./UsersInfo/MyAccount/types/AccountType";
 import {IconType} from "react-icons";
 
 type UserMenuItemProps = {

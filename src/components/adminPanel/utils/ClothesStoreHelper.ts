@@ -34,10 +34,10 @@ class ClothesStoreHelper {
     getClothes(onSuccess: (clothes: Cloth[]) => void) {
         const db = ClothesStoreHelper.getDB();
         db.onsuccess = function () {
-            let result = db.result
+            let result = db.result as IDBDatabase
             let request = result.transaction([CLOTHES_STORE], "readonly").objectStore(CLOTHES_STORE).getAll();
             request.onsuccess = function () {
-                onSuccess(request.result)
+                onSuccess(request.result as Cloth[])
             }
             request.onerror = function () {
             }
@@ -46,14 +46,14 @@ class ClothesStoreHelper {
             console.log('ОШИБКА')
         }
     }
-    getClothById(id,onSuccess){
+    getClothById(id:number,onSuccess:(cloth:Cloth)=>void):void{
         const db=ClothesStoreHelper.getDB();
         db.onsuccess=function(){
-            let result=db.result;
-            console.log('kekes',id)
+            let result=db.result as IDBDatabase;
+
             let request=result.transaction([CLOTHES_STORE],"readonly").objectStore(CLOTHES_STORE).get(Number(id))
             request.onsuccess=function (){
-                onSuccess(request.result)
+                onSuccess(request.result as Cloth)
             }
             request.onerror=function(){
 

@@ -4,6 +4,7 @@ import {useLocation, useNavigate, useParams} from "react-router";
 import useClickFavoriteCloth from "../../../common/hooks/useClickFavoriteCloth/useClickFavoriteCloth";
 import styleLike from "../ShopList.module.css";
 import {useSelector} from "react-redux";
+import {RootState} from "../../../index";
 
 
 type Props = { clothesName: string, price: string, firstImage: string, secondImage: string, id: number };
@@ -13,13 +14,13 @@ const ShopGallery: React.FC<Props> = ({clothesName, firstImage, secondImage, pri
     const navigate = useNavigate();
     const params = useParams();
     const clickFavorite = useClickFavoriteCloth();
-    ///@ts-ignore
-    const favoriteItems = useSelector(state => state.clothes.favoriteItems);
-    // @ts-ignore
+
+    const favoriteItems = useSelector((state:RootState)=> state.clothes.favoriteItems);
+
     const isClothInFavorite = favoriteItems.includes(id);
 
     function clickOnCloth(e) {
-        console.log(e, 'vcvv');
+
         navigate(`/${params.gender}/shop/${id}`)
 
     }
@@ -29,7 +30,6 @@ const ShopGallery: React.FC<Props> = ({clothesName, firstImage, secondImage, pri
         clickFavorite(id);
     }
 
-    console.log('favorites', favoriteItems, id)
 
     return <div className={style.flexItemContainer} onClick={clickOnCloth}>
         <div className={style.shopListItem}

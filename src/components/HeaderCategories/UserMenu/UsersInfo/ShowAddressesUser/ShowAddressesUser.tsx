@@ -7,12 +7,13 @@ import styles from "../MyAccount/MyAccount.module.css";
 import stylesAddresses from './ShowAddressesUser.module.css'
 import EditButton from "./EditButton";
 import UserHeader from "../UserAddressBook/UserHeader";
+import {RootState} from "../../../../../index";
 
 
 const ShowAddressesUser = () => {
 // TODO use location
-    //@ts-ignore
-    const loggedInSer = useSelector(state => state.users.loggedInUser);
+
+    const loggedInSer = useSelector((state:RootState) => state.users.loggedInUser);
     return <div className={styles.ordersUsers}>
         {loggedInSer.countryCode?<UserHeader/>:<UserAddressBookHeaderWithNoAddressInfo/>}
         <div className={stylesAddresses.addressContainer}>

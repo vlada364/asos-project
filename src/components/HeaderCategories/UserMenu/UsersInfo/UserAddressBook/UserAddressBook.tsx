@@ -21,13 +21,14 @@ import ShowCountySelect from "./ShowCountySelect";
 import ListOfCountries from './ListOfCountries'
 import UserAddressBookHeaderWithNoAddressInfo from "./UserAddressBookHeaderWithNoAddressInfo";
 import ShowAddressesUser from "../ShowAddressesUser/ShowAddressesUser";
+import {RootState} from "../../../../../index";
 
 
 
 
 const UserAddressBook = () => {
-    //@ts-ignore
-    const loggedInSer = useSelector(state => state.users.loggedInUser);
+
+    const loggedInSer = useSelector((state:RootState) => state.users.loggedInUser);
     const dispatch = useDispatch()
 
     const initialValues = {

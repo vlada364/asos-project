@@ -12,11 +12,12 @@ import ChangesSaved from "../MyAccount/ChangesSaved/ChangesSaved";
 import UserDetailsForm from "./UserDetailsForm";
 import useFormToolsHelper from "../../../../../common/hooks/useFormToolsHelper/useFormToolsHelper";
 import useHandleBirthday from "../../../../../common/hooks/useHandleBirthday/useHandleBirthday";
+import {RootState} from "../../../../../index";
 
 
 const UsersDetailsInfo = () => {
-    //@ts-ignore
-    const loggedInSer = useSelector(state => state.users.loggedInUser);
+
+    const loggedInSer = useSelector((state:RootState) => state.users.loggedInUser);
     const dispatch = useDispatch();
     const [isChangesSaved, setChangesSaved] = useState(false);
 
@@ -54,7 +55,7 @@ const UsersDetailsInfo = () => {
         const text = getTextAndTooltipVisibility(name, value);
         changeFieldTooltip(name, text);
     }
-//@ts-ignore
+
     function onSuccessSubmit(value) {
 
         const email = localStorage.getItem('loggedUser');
@@ -70,8 +71,9 @@ const UsersDetailsInfo = () => {
 
             localStorage.setItem('loggedUser', value.email_address);
 
-        }, () => {
-            changeFieldTooltip('email_address', "This email is already exists")
+        },
+             () => {
+            changeFieldTooltip('email_address', 'This email is already exists')
         })
     }
 

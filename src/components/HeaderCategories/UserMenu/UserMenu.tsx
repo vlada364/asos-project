@@ -13,6 +13,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {RiAdminLine} from 'react-icons/ri'
 
 import {setLoggedInUser} from "../../../common/redux/users/actions";
+import {RootState} from "../../../index";
 
 /*
 
@@ -20,8 +21,8 @@ import {setLoggedInUser} from "../../../common/redux/users/actions";
  */
 
 const UserMenu = ({tooltipRef, onMouseLeave, closeMenu}) => {
-  //@ts-ignore
-    const loggedInSer = useSelector(state => state.users.loggedInUser);
+
+    const loggedInSer = useSelector((state:RootState)=> state.users.loggedInUser);
     const isAdmin = loggedInSer?.email_address === 'admin@mail.ru'
     const dispatch = useDispatch();
 
