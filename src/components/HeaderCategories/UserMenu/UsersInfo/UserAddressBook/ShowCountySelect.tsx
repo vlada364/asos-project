@@ -21,11 +21,11 @@ const ShowCountySelect = ({
 
     return <> {(addInputsValueByCountry.map(elem => (
         elem.name === 'countyOptional' && hasCountrySubRegions ? (
-            <>    <label className={stylesForm.nameLabel}>COUNTY:</label>
-                <select style={{marginBottom: '20px',padding:'13px 13px'}} name='countyOptionalSelect' value={valueSelect} onChange={handleCountySelect}>
-                    {objByCountryCode.subRegions.map(el => (
-                        <InputsInfoByCountry label={el.name} code={el.code} value={el.code}
-                                             tooltipText={tooltipsText[el.name]}/>))}</select></>) :
+                <>    <label className={stylesForm.nameLabel}>COUNTY:</label>
+                    <select style={{marginBottom: '20px', padding: '13px 13px'}} name='countyOptionalSelect'
+                            value={valueSelect} onChange={handleCountySelect}>
+                        {objByCountryCode.subRegions.map(el => (
+                            <InputsInfoByCountry label={el.name} value={el.code}/>))}</select></>) :
             <FormTextInput label={elem.label} value={value[elem.name]} name={elem.name}
                            handleChangeInput={handleChangeInput} tooltipText={tooltipsText[elem.name]}/>)))}</>;
 }

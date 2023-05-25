@@ -1,17 +1,9 @@
 import React from 'react';
 import {ValueAndLabel} from "../../../../ClothCreationForm/utils/ClothesInfo";
 
-
-type Code={
-    code?:string
-}
-type TooltipText={
-    tooltipText?:string
-}
-const InputsInfoByCountry= ({label,value,code,tooltipText}:ValueAndLabel&Code&TooltipText) => {
+const InputsInfoByCountry = ({label, value}: ValueAndLabel) => {
     return (
-            <option value={value} style={{padding:'20px 20px'}}>{label}</option>
-
+        <option value={value} style={{padding: '20px 20px'}}>{label}</option>
     );
 }
 

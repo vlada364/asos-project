@@ -37,9 +37,7 @@ const UsersChangePasswordForm = () => {
         tooltipsText,
         changeFieldTooltip
     } = useFormToolsHelper(formInitialState, formInitialState);
-
     const dispatch = useDispatch()
-
     const [isChangesSaved, setChangesSaved] = useState(false);
 
     useEffect(() => {

@@ -11,12 +11,7 @@ const UserPaymentMethod = () => {
             <div className={styles.textMyOrders}><span>ADD PAYMENT METHOD</span></div>
         </div>
         <div className={styles.ordersContainer}>
-            <div className={styles.imgHanger}>
-                <img src='/img/img888.svg'/>
-            </div>
-            <span style={{fontWeight:'600',fontSize:'16px'}}>YOU NEED A BILLING ADDRESS</span>
-            <p style={{fontWeight:'300',fontSize:'14px'}}>You currently have no saved address. Without one, you won't be able to add a new payment method.</p>
-            <button className={styles.btnStartShopping}>ADD NEW ADDRESS</button>
+            <button className={styles.btnStartShopping}>ADD PAYMENT METHOD</button>
         </div>
     </div>);
 }

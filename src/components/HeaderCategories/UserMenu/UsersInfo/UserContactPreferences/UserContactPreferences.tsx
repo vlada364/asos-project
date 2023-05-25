@@ -14,37 +14,45 @@ import {useState} from 'react'
 import UserStoreHelper from "../../../../Registration/SelectDate/utils/UserStoreHelper";
 
 
-type Props = {};
+
 
 
 type StateWithUser = { users: { loggedInUser?: User } }
 
 export type ContactTypesObj = { img: string, label: string, name: string, text: string, value: boolean };
 
+export enum UserContactPreferencesTypes {
+    DiscountsAndSales='DiscountsAndSales',
+    AsosPartners='AsosPartners',
+    YourExclusives='YourExclusives',
+    NewStuff='NewStuff'
+}
 
-const allUnchecked = {
-    AsosPartners: false,
-    YourExclusives: false,
-    DiscountsAndSales: false,
-    NewStuff: false
+
+export const allUnchecked = {
+    [UserContactPreferencesTypes.AsosPartners]: false,
+    [UserContactPreferencesTypes.YourExclusives]: false,
+    [UserContactPreferencesTypes.DiscountsAndSales]: false,
+    [UserContactPreferencesTypes.NewStuff]: false
 }
 
 const allChecked = {
-    AsosPartners: true,
-    YourExclusives: true,
-    DiscountsAndSales: true,
-    NewStuff: true
+    [UserContactPreferencesTypes.AsosPartners]: true,
+    [UserContactPreferencesTypes.YourExclusives]: true,
+    [UserContactPreferencesTypes.DiscountsAndSales]: true,
+    [UserContactPreferencesTypes.NewStuff]: true
 }
 
 
 const UserContactPreferences = () => {
-    const loggedInSer = useSelector(loggedUserSelector);
+     const loggedInSer = useSelector(loggedUserSelector);
+
 
     const initialState = {
-        AsosPartners: loggedInSer.AsosPartners,
-        YourExclusives: loggedInSer.YourExclusives,
-        DiscountsAndSales: loggedInSer.DiscountsAndSales,
-        NewStuff: loggedInSer.NewStuff
+        [UserContactPreferencesTypes.AsosPartners]: loggedInSer.AsosPartners,
+        [UserContactPreferencesTypes.YourExclusives]: loggedInSer.YourExclusives,
+        [UserContactPreferencesTypes.DiscountsAndSales]: loggedInSer.DiscountsAndSales,
+        [UserContactPreferencesTypes.NewStuff]: loggedInSer.NewStuff
 
     }
     const {
@@ -54,7 +62,7 @@ const UserContactPreferences = () => {
         inputsValue,
         changeInputValueByName,
         setInputStateValue
-    } = useFormToolsHelper(initialState);
+    } = useFormToolsHelper(initialState,{});
 
     console.log(loggedInSer, 'PATRGRG')
     const dispatch = useDispatch();
@@ -62,28 +70,28 @@ const UserContactPreferences = () => {
 
     const contentTypesArray = [{
         img: '/img/imageForCheckbox.webp',
-        name: 'DiscountsAndSales',
+        name: UserContactPreferencesTypes.DiscountsAndSales,
         label: 'Discounts and Sales',
         text: 'Be first in line to nab the stuff you love for less.',
         value: loggedInSer.DiscountsAndSales
     },
         {
             img: '/img/imgForCheckBox22.jpg',
-            name: 'NewStuff',
+            name: UserContactPreferencesTypes.NewStuff,
             label: 'New Stuff',
             text: 'Fashion drops, news and style advice: hear it first, wear it first.',
             value: loggedInSer.NewStuff
         },
         {
             img: '/img/imgForCheckBox33.webp',
-            name: 'YourExclusives',
+            name: UserContactPreferencesTypes.YourExclusives,
             label: 'Your exclusives',
             text: 'Enjoy a birthday treat, as well as tailored rewards and account updates.',
             value: loggedInSer.YourExclusives
         },
         {
             img: '/img/imgForCheckBox44.webp',
-            name: 'AsosPartners',
+            name: UserContactPreferencesTypes.AsosPartners,
             label: 'Asos Partners',
             text: 'Stay in the know with exclusive collabs and handpicked offers.',
             value: loggedInSer.AsosPartners
@@ -92,11 +100,8 @@ const UserContactPreferences = () => {
 
     console.log(loggedInSer, 'LOGGEDINSEEER')
 
-    function onClickCheckbox(e: { name: string; value: boolean; }) {
-
+    function onClickCheckbox(e: { name: UserContactPreferencesTypes; value: boolean; }) {
         changeInputValueByName(e.name, e.value)
-
-
     }
 
     useEffect(() => {

@@ -33,7 +33,7 @@ const FormTextInput = ({label, id, hint, value, handleChangeInput, name, tooltip
             <input id={id} className={styles.formInput} name={name} type={type} value={value}
                    onChange={(e) => handleChangeInput(e)}/>
         </div>
-        {hint && <div className={styles.littleNote}><p>{hint}</p></div>}
+        {hint && <div className={styles.littleNote} data-testid='note'><p>{hint}</p></div>}
     </div>;
 }
 

@@ -16,8 +16,9 @@ const LoginPage = () => {
     const [isUserMenuOpened, setMenuOpened] = useState<boolean>(false);
     const didMount = useRef<boolean>(false);
 
-    const loggedInSer = useSelector((state:RootState) => state.users.loggedInUser);//
-    const navigate=useNavigate()
+    const loggedInSer = useSelector((state:RootState) => state.users.loggedInUser);
+    const navigate=useNavigate();
+
     useEffect(() => {
         if (didMount.current) {
             if (isUserMenuOpened) {
@@ -50,16 +51,16 @@ const LoginPage = () => {
     const close = () => {
         console.log('CLOSING INSIDE!')
         tooltipRef.current.animate([
-            // keyframes
+
             {transform: 'translateY(372px)'},
             {transform: 'translateY(-372px)'}
         ], {
-            // timing options
+
             duration: 400,
             direction: "normal",
             fill: "forwards"
         });
-        // setTimeout(()=>tooltipRef.current.style.display='none',400);
+
 
     }
     const onLoginIconEnter = () => {

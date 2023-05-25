@@ -15,7 +15,7 @@ const ShowAddressesUser = () => {
 
     const loggedInSer = useSelector((state:RootState) => state.users.loggedInUser);
     return <div className={styles.ordersUsers}>
-        {loggedInSer.countryCode?<UserHeader/>:<UserAddressBookHeaderWithNoAddressInfo/>}
+        {loggedInSer.countryCode?<UserHeader text={'ADDRESS BOOK'} src={'/img/img888.svg'}/>:<UserAddressBookHeaderWithNoAddressInfo/>}
         <div className={stylesAddresses.addressContainer}>
                 <Outlet/>
 

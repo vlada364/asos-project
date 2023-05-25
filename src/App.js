@@ -26,9 +26,9 @@ import ClothCreationForm from "./components/ClothCreationForm/ClothCreationForm"
 import AdminPanel from "./components/adminPanel/AdminPanel";
 import ShopList from "./components/shopList/ShopList";
 import ClothPage from "./components/shopList/ClothPage/ClothPage";
-import {addFavoriteItem, setFavoriteItems} from "./common/redux/clothes/actions";
+import { setFavoriteItems} from "./common/redux/clothes/actions";
 import FavoriteClothes from "./components/FavoriteClothes/FavoriteClothes";
-import ClothesStoreHelper from "./components/adminPanel/utils/ClothesStoreHelper";
+import AdminMenu from './components/adminPanel/adminMenu/AdminMenu';
 
 
 function App() {
@@ -36,8 +36,7 @@ function App() {
     const loggedInSer = useSelector(state => state.users.loggedInUser);
     const emailAdmin = loggedInSer?.email_address;
     const isEmailAdmin = emailAdmin === 'admin@mail.ru'
-    console.log('EMAAIL', isEmailAdmin)
-    console.log('test', location, loggedInSer);
+
     const dispatch = useDispatch();
     const {getState} = useStore();
 
@@ -45,16 +44,20 @@ function App() {
         UserStoreHelper.getUser(email, (user) => resolve(user));
     });
 
-    const fetchData=async ()=>{
-        // Мы это делаем чтобы перед выходом запомнить, какие вещи лайкнули
+    useEffect(()=>{
+        // это работает, когда мы страниицу закрываем
         window.onbeforeunload = () => {
-            localStorage.setItem('favoriteClothes', getState().clothes.favoriteItems)
+            localStorage.setItem('favoriteClothes', getState().clothes.favoriteItems);
         }
-        // тут мы достаем id которые мы лайкнули
+    },[]);
+
+    const fetchData=async ()=>{
+
+        // это, когда мы заходим на страницу
         const favorites = localStorage.getItem('favoriteClothes');
         let ids = [];
         if (favorites) {
-            // добавляем поочередно это айди
+
             ids = favorites.split(',').map(Number);
         }
         const email = localStorage.getItem('loggedUser');
@@ -82,7 +85,7 @@ function App() {
                 <Route path='/woman' element={<MainPage/>}/>
                 <Route path='/man' element={<MainPage/>}/>
                 <Route path={'/admin'} element={<AdminPanel/>}>
-                    <Route index element={<div> Манечка тут меню сделаешь</div>}/>
+                    <Route index element={<AdminMenu/>}/>
                     <Route path={'clothes'}>
                         <Route path={'create'} element={<ClothCreationForm/>}/>
                     </Route>

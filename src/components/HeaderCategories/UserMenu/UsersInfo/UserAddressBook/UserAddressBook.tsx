@@ -19,11 +19,7 @@ import userStoreHelper from "../../../../Registration/SelectDate/utils/UserStore
 import {setLoggedInUser} from "../../../../../common/redux/users/actions";
 import ShowCountySelect from "./ShowCountySelect";
 import ListOfCountries from './ListOfCountries'
-import UserAddressBookHeaderWithNoAddressInfo from "./UserAddressBookHeaderWithNoAddressInfo";
-import ShowAddressesUser from "../ShowAddressesUser/ShowAddressesUser";
 import {RootState} from "../../../../../index";
-
-
 
 
 const UserAddressBook = () => {
@@ -42,7 +38,7 @@ const UserAddressBook = () => {
         countyOptional: loggedInSer.countyOptional || '',
         countyOptionalSelect: loggedInSer.countyOptionalSelect || '',
         postCode: loggedInSer.postCode || '',
-
+        addressFinder:""
 
     };
     const {
@@ -90,17 +86,19 @@ const UserAddressBook = () => {
 
             changeInputValueByName('countyOptionalSelect','')
 
-    },[inputsValue.countryCode])
+    },[inputsValue.countryCode]);
+
     function handleSubmit(e) {
         e.preventDefault();
         const formValues = Object.fromEntries([...(new FormData(e.target))]);
-        console.log('VALUEEEE',formValues)
+
         let errorsCount = countErrorsAndSetTooltips(formValues, changeFieldTooltip);
         if (!isPhoneNumberValid.isValid) {
             errorsCount += 1
 
         }
         if (errorsCount === 0) {
+            setChangesSaved(true)
             const newUser = {...loggedInSer, ...inputsValue};
             userStoreHelper.addUser(newUser, () => {
                 dispatch(setLoggedInUser(newUser));

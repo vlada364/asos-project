@@ -8,13 +8,15 @@ import CategoryHeader from "./CategoryHeader/CategoryHeader";
 import {categoryItemsMap} from "../../data/MenuItems";
 import ClothesCategory from "./ClothesCategory/ClothesCategory";
 import {menuItems} from "../../data/menuHeader/menuHeader";
+import {useNavigate} from "react-router";
 
 
 const Header = () => {
 
     const {pathname} = useLocation();
     const [isMenuOpen, setMenuOpen] = useState<boolean>(false);
-    const [idCategories, setIdCategories] = useState<number>(0)
+    const [idCategories, setIdCategories] = useState<number>(0);
+    const navigate=useNavigate()
 
 
     function changeId(id: number) {
@@ -33,7 +35,10 @@ const Header = () => {
     return (<div className='header'>
         <div className={'black-back'}>
             <div className='block-info'>
-                <img src='/img/Asos-logo.png'/>
+                <img src='/img/Asos-logo.png' onClick={()=>{
+                    navigate('/')
+                }
+                }/>
                 <div className='gender-category'>
                     <MenuLink selected={pathname.includes('/woman')} title={'Women'} to={'/woman'}/>
                     <MenuLink selected={pathname.includes('/man')} title={'Men'} to={'/man'}/>
